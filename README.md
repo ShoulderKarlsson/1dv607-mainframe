@@ -1,7 +1,5 @@
 # Mainframe
 
-## Workshop 1
-
 
 ### Gruppmedlemmar
 
