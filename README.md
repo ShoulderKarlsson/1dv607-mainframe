@@ -5,8 +5,8 @@
 
 ### Gruppmedlemmar
 
-• Axel Karlsson
+• Axel Karlsson - ak223fy@student.lnu.se
 
-• Loke Carlsson
+• Loke Carlsson - lc222ak@student.lnu.se
 
-• Oscar Nordquist
+• Oscar Nordquist - on222bx@student.lnu.se
