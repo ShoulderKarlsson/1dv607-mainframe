@@ -4,7 +4,7 @@
 # Mainframe
 
 
-### Gruppmedlemmar
+### Group members
 
 • Axel Karlsson - ak223fy@student.lnu.se
 
