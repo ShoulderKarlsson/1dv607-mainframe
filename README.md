@@ -1,9 +1,7 @@
-# Mainframe
-
-## Workshop 1
+# 1dv607 - Workshop 1
 
 
-### Gruppmedlemmar
+### Group members
 
 • Axel Karlsson - ak223fy@student.lnu.se
 
