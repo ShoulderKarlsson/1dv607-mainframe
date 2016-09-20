@@ -1,7 +1,9 @@
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/filp/whoops.svg?maxAge=2592000)]()
 [![SonarQube Coverage](https://img.shields.io/sonar/http/sonar.qatools.ru/ru.yandex.qatools.allure:allure-core/coverage.svg?maxAge=2592000)]()
 
-# Mainframe
+# Mainframe - Workshop 2
+
+CODE!
 
 
 ### Gruppmedlemmar
