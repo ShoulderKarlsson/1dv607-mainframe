@@ -9,7 +9,7 @@ namespace Workshop_2.model
         private int _id;
         private List<Boat> _memberBoats = new List<Boat>();
         //private Calendar _calendar;
-
+        private int _fee;
 
     }
 }
