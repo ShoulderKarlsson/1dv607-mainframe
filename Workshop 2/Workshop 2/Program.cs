@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Workshop_2.view;
+using Newtonsoft.Json;
+using System.IO;
+
 
 namespace Workshop_2
 {
@@ -11,10 +13,22 @@ namespace Workshop_2
     {
         static void Main(string[] args)
         {
-            view.Operations ops = new Operations();
-            string operation = ops.GetOperation();
+            string filePath = "..\\..\\db\\members.json";
 
-            Console.WriteLine(operation);
+            string json;
+            using (StreamReader r = new StreamReader(filePath))
+            {
+                json = r.ReadToEnd();
+
+            }
+
+            List<model.User> numbers = JsonConvert.DeserializeObject<List<model.User>>(json);
+            foreach (var user in numbers)
+            {
+                Console.WriteLine(user.username);
+                Console.WriteLine(user.personal_id);
+            }
+
         }
     }
 }

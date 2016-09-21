@@ -11,5 +11,6 @@ namespace Workshop_2.controller
     class Secretary
     {
         private Calendar _calendar;
+
     }
 }
