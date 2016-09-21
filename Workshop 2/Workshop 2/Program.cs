@@ -42,8 +42,13 @@ namespace Workshop_2
             //string json = JsonConvert.SerializeObject(memberlist, Formatting.Indented);
             //File.WriteAllText(filePath, json);
             #endregion
-
-
+            
+            /*
+             * Göra något som hanterar databasen.
+             * Spara ner medlemmar till den requiremetns.
+             * Gå vidare med requiremetnstn
+             */
+            
             controller.BaseController bc = new controller.BaseController();
             bc.Init();
         }
