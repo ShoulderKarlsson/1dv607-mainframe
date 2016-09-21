@@ -1,0 +1,24 @@
+[
+  {
+    "_name": "Loke",
+    "_id": 9,
+    "_memberBoats": [
+      {
+        "Type": "Canoe",
+        "Length": 5
+      },
+      {
+        "Type": "Färja",
+        "Length": 3
+      },
+      {
+        "Type": "Roddböt",
+        "Length": 2
+      },
+      {
+        "Type": "eka",
+        "Length": 1
+      }
+    ]
+  }
+]
