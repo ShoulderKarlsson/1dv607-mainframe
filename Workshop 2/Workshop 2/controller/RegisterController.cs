@@ -19,6 +19,7 @@ namespace Workshop_2.controller
             string personalNumber = rView.GetUserPersonalNumber();
 
             model.Member nMember = new model.Member(username, personalNumber);
+            Console.WriteLine(nMember.ToString());
         }
     }
 }

@@ -37,5 +37,10 @@ namespace Workshop_2.model
                 _personalNumber = value;
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format("Name: {0} - PersonalNumber : {1} - Fee: {2}", Name, PersonalNumber, _fee);
+        }
     }
 }
