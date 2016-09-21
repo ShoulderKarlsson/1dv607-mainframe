@@ -7,8 +7,8 @@
 
         public Boat(string type, int length)
         {
-            _type = type;
-            _length = length;
+            Type = type;
+            Length = length;
         }
 
         public string Type

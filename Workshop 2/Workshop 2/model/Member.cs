@@ -1,26 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Workshop_2.model
 {
     public class Member
     {
-        public string _name;
-        //private int _personalNumber;
-        public int _id;
-        public List<Boat> _memberBoats;
-        //private Calendar _calendar;
-        //private int _fee;
+        private string _name;
+        private string _personalNumber;
+        private int _id;
+        private int _fee = 0;
+        private List<Boat> _memberBoats = new List<Boat>();
 
-
-        public Member(string name, int id, List<Boat> boats)
+        public Member(string name, string personalNumber)
         {
-            _name = name;
-            _id = id;
-            _memberBoats = boats;
+            Name = name;
+            PersonalNumber = personalNumber;
         }
 
 
+        public string Name
+        {
+            get { return _name; }
+            private set { _name = value; }
+        }
 
-
+        public string PersonalNumber
+        {
+            get { return _personalNumber; }
+            private set
+            {
+                _personalNumber = value;
+            }
+        }
     }
 }
