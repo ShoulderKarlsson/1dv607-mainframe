@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Workshop_2.controller;
+using Workshop_2.model;
 
 namespace Workshop_2.view
 {
     class RegisterView
     {
-        public void renderRegisterView()
+
+        private model.Database _DAL;
+        public RegisterView(model.Database DAL)
+        {
+            _DAL = DAL;
+        }
+
+        public void RenderRegisterView()
         {
             Console.WriteLine("Enter information about new user.. =)");
         }
 
         public string GetUsername()
-        {
-            string username = "";
+        {   
+
+            string name = "";
             bool shouldLoop = true;
 
             do
@@ -23,8 +33,11 @@ namespace Workshop_2.view
                 Console.Write("Name: ");
                 try
                 {
-                    username = Console.ReadLine();
-                    if (username.Length < 2)
+                    name = Console.ReadLine();
+
+
+
+                    if (name.Length < 2)
                     {
                         throw new Exception("Name is to short!");
                     }
@@ -36,7 +49,7 @@ namespace Workshop_2.view
                 }
             } while (shouldLoop);
 
-            return username;
+            return name;
         }
 
         public string GetUserPersonalNumber()
@@ -60,10 +73,14 @@ namespace Workshop_2.view
                     }
 
 
-
                     if (personalNumber.Length < 10)
                     {
                         throw new Exception("Personal Number must be 10 numbers long.");
+                    }
+
+                    if (_DAL.IsPersonalNumberTaken(personalNumber))
+                    {
+                        throw new Exception("That personal number is already registered, try again.");
                     }
                     shouldLoop = false;
                 }

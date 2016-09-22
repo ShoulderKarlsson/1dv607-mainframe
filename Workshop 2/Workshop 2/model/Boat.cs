@@ -1,4 +1,6 @@
-﻿namespace Workshop_2.model
+﻿using System;
+
+namespace Workshop_2.model
 {
     public class Boat
     {
@@ -21,6 +23,6 @@
         {
             get { return _length; }
             private set { _length = value; }
-        }
+        } 
     }
 }

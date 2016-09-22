@@ -66,6 +66,7 @@
     <Compile Include="controller\BaseController.cs" />
     <Compile Include="controller\RegisterController.cs" />
     <Compile Include="model\Boat.cs" />
+    <Compile Include="model\Database.cs" />
     <Compile Include="model\Member.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,17 +1,17 @@
-﻿[{
-	"username": "Jolly Rodge1r",
-	"member_id": "1",
-	"personal_id": "234871"
-}, {
-	"username": "Jolly Rodge2r",
-	"member_id": "132234234234",
-	"personal_id": "234871"
-}, {
-	"username": "Jolly Rod3ger",
-	"member_id": "12222",
-	"personal_id": "234871"
-}, {
-	"username": "Jolly Rodg4er",
-	"member_id": "2352352351",
-	"personal_id": "2352354871"
-}]
+[
+  {
+    "Name": "Loke",
+    "PersonalNumber": "4545454545",
+    "MemberBoats": []
+  },
+  {
+    "Name": "ajsfkjasfasf",
+    "PersonalNumber": "123123123123123123",
+    "MemberBoats": []
+  },
+  {
+    "Name": "LokeIGEN",
+    "PersonalNumber": "7506100550",
+    "MemberBoats": []
+  }
+]

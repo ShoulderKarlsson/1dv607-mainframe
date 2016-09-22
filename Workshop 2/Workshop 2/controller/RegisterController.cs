@@ -3,23 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Workshop_2.model;
+using Workshop_2.view;
 
 
 namespace Workshop_2.controller
 {
     class RegisterController
     {
-        private view.RegisterView rView = new view.RegisterView();
+        private model.Database _DAL;
+        private view.RegisterView rView;
+
+        public RegisterController()
+        {
+            _DAL = new Database();
+            rView = new RegisterView(_DAL);
+        }
         
+
         public void CollectInformation()
         {
-            rView.renderRegisterView();
+            rView.RenderRegisterView();
             
             string username = rView.GetUsername();
             string personalNumber = rView.GetUserPersonalNumber();
+            model.Member newMember = new model.Member(username, personalNumber);
 
-            model.Member nMember = new model.Member(username, personalNumber);
-            Console.WriteLine(nMember.ToString());
+            SaveMember(newMember);
+        }
+
+        private void SaveMember(Member member)
+        {
+            _DAL.AddUser(member);
         }
     }
 }

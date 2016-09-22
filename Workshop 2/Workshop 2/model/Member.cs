@@ -38,6 +38,16 @@ namespace Workshop_2.model
             }
         }
 
+        public List<Boat> MemberBoats
+        {
+            get { return new List<Boat>(_memberBoats);}
+        }
+
+        public void AddBoat(Boat boat)
+        {
+            _memberBoats.Add(boat);
+        }
+
         public override string ToString()
         {
             return string.Format("Name: {0} - PersonalNumber : {1} - Fee: {2}", Name, PersonalNumber, _fee);
