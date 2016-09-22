@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="controller\BaseController.cs" />
     <Compile Include="controller\DeleteController.cs" />
+    <Compile Include="controller\EditController.cs" />
     <Compile Include="controller\RegisterController.cs" />
     <Compile Include="model\Boat.cs" />
     <Compile Include="model\Database.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="view\BaseUI.cs" />
     <Compile Include="view\BaseView.cs" />
     <Compile Include="view\DeleteView.cs" />
+    <Compile Include="view\EditView.cs" />
     <Compile Include="view\RegisterView.cs" />
   </ItemGroup>
   <ItemGroup>

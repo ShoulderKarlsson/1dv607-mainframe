@@ -15,6 +15,7 @@ namespace Workshop_2.view
             Console.WriteLine("Choose what todo: ");
             Console.WriteLine("Press 'R' to register member");
             Console.WriteLine("Press 'D' to delete member");
+            Console.WriteLine("Press 'E' to edit a member");
         }
 
 

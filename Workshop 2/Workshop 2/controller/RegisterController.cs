@@ -11,23 +11,26 @@ namespace Workshop_2.controller
 {
     class RegisterController
     {
-        private model.Database _DAL;
-        private view.RegisterView rView;
+        private readonly model.Database _DAL;
+        private readonly view.RegisterView _rView;
 
         public RegisterController()
         {
             _DAL = new Database();
-            rView = new RegisterView(_DAL);
+            _rView = new RegisterView(_DAL);
         }
         
 
         public void CollectInformation()
         {
-            rView.RenderRegisterView();
+            _rView.Render();
             
-            string username = rView.GetUsername();
-            string personalNumber = rView.GetUserPersonalNumber();
+            string username = _rView.GetUsername();
+            string personalNumber = _rView.GetUserPersonalNumber();
             model.Member newMember = new model.Member(username, personalNumber);
+            newMember.AddBoat(new Boat("eka", 5));
+            newMember.AddBoat(new Boat("canoe", 5));
+            newMember.AddBoat(new Boat("boaty mc boatface", 5));
 
             SaveMember(newMember);
         }

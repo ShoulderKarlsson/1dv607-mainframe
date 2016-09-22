@@ -10,20 +10,20 @@ namespace Workshop_2.controller
 {
     class DeleteController
     {
-        private model.Database _DAL;
-        private view.DeleteView dView;
+        private readonly model.Database _DAL;
+        private readonly view.DeleteView _dView;
 
 
         public DeleteController()
         {
             _DAL = new Database();
-            dView = new DeleteView(_DAL);
+            _dView = new DeleteView(_DAL);
         }
 
         public void CollectInformation()
         {
-            dView.Render();
-            string personalNumber = dView.GetUserPersonalNumber();
+            _dView.Render();
+            string personalNumber = _dView.GetUserPersonalNumber();
             _DAL.RemoveUser(personalNumber);
         }
     }

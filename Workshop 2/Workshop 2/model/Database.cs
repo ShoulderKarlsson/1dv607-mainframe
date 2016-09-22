@@ -66,6 +66,19 @@ namespace Workshop_2.model
             UpdateDatabase();
         }
 
+        public model.Member GetUserInfo(string personalNumber)
+        {
+            foreach (Member member in _storedMembers)
+            {
+                if (member.PersonalNumber == personalNumber)
+                {
+                    return member;
+                }
+            }
+
+            return null;
+        }
+
         public void UpdateUser()
         {
             

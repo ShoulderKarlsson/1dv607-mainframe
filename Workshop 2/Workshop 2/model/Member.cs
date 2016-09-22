@@ -33,7 +33,20 @@ namespace Workshop_2.model
 
         public override string ToString()
         {
-            return string.Format("Name: {0} - PersonalNumber : {1} - Fee: {2}", Name, PersonalNumber, _fee);
+            string boats = CollectBoats();
+            return $"Name: {Name} \n Personal Number: {PersonalNumber} \n {boats}";
+        }
+
+        private string CollectBoats()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Boat boat in MemberBoats)
+            {
+                sb.Append(boat);
+            }
+
+            return sb.ToString();
         }
     }
 }

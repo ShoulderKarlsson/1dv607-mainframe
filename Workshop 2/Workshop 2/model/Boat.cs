@@ -23,6 +23,11 @@ namespace Workshop_2.model
         {
             get { return _length; }
             private set { _length = value; }
-        } 
+        }
+
+        public override string ToString()
+        {
+            return $"Type: {Type}. Length: {Length} \n";
+        }
     }
 }
