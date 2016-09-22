@@ -8,14 +8,11 @@ using Workshop_2.model;
 
 namespace Workshop_2.view
 {
-    class RegisterView
+    class RegisterView : BaseView
     {
 
-        private model.Database _DAL;
-        public RegisterView(model.Database DAL)
-        {
-            _DAL = DAL;
-        }
+        //private model.Database _DAL;
+        public RegisterView(model.Database DAL) : base(DAL) {}
 
         public void RenderRegisterView()
         {
@@ -48,45 +45,5 @@ namespace Workshop_2.view
 
             return name;
         }
-
-        public string GetUserPersonalNumber()
-        {
-            string personalNumber = "";
-            bool shouldLoop = true;
-
-            do
-            {
-                Console.Write("Personal Number: ");
-                try
-                {
-                    personalNumber = Console.ReadLine();
-
-                    foreach (char letter in personalNumber)
-                    {
-                        if (!char.IsDigit(letter))
-                        {
-                            throw new Exception("Can only be numbers in personal number.");
-                        }
-                    }
-
-                    if (personalNumber.Length < 10)
-                    {
-                        throw new Exception("Personal Number must be 10 numbers long.");
-                    }
-
-                    if (_DAL.IsPersonalNumberTaken(personalNumber))
-                    {
-                        throw new Exception("That personal number is already registered, try again.");
-                    }
-                    shouldLoop = false;
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error);
-                }
-            } while (shouldLoop);
-            return personalNumber;
-        }
-
     }
 }

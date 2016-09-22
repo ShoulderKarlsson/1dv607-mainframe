@@ -20,9 +20,6 @@ namespace Workshop_2.model
             _storedMembers = GetMembers();
         }
 
-
-
-
         public bool IsPersonalNumberTaken(string personalNumber)
         {
             bool found = false;
@@ -47,13 +44,26 @@ namespace Workshop_2.model
         {
             
             _storedMembers.Add(newMember);
+            UpdateDatabase();
+        }
+
+        private void UpdateDatabase()
+        {
             string json = JsonConvert.SerializeObject(_storedMembers, Formatting.Indented);
             File.WriteAllText(filePath, json);
         }
 
-        public void RemoveUser()
+        public void RemoveUser(string personalNumber)
         {
+            for (int mIx = 0; mIx < _storedMembers.Count; mIx++)
+            {
+                if (_storedMembers[mIx].PersonalNumber == personalNumber)
+                {
+                    _storedMembers.Remove(_storedMembers[mIx]);
+                }
+            }
 
+            UpdateDatabase();
         }
 
         public void UpdateUser()

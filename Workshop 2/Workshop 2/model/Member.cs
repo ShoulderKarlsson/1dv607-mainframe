@@ -10,11 +10,8 @@ namespace Workshop_2.model
 {
     public class Member
     {
-        private string _name;
-        private string _personalNumber;
         private int _id;
         private int _fee = 0;
-        private List<Boat> _memberBoats = new List<Boat>();
 
         public Member(string name, string personalNumber)
         {
@@ -23,29 +20,15 @@ namespace Workshop_2.model
         }
 
 
-        public string Name
-        {
-            get { return _name; }
-            private set { _name = value; }
-        }
+        public string Name { get; }
 
-        public string PersonalNumber
-        {
-            get { return _personalNumber; }
-            private set
-            {
-                _personalNumber = value;
-            }
-        }
+        public string PersonalNumber { get; }
 
-        public List<Boat> MemberBoats
-        {
-            get { return _memberBoats; }
-        }
+        public List<Boat> MemberBoats { get; } = new List<Boat>();
 
         public void AddBoat(Boat boat)
         {
-            _memberBoats.Add(boat);
+            MemberBoats.Add(boat);
         }
 
         public override string ToString()

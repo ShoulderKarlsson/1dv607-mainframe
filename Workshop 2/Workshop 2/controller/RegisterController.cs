@@ -29,7 +29,6 @@ namespace Workshop_2.controller
             string personalNumber = rView.GetUserPersonalNumber();
             model.Member newMember = new model.Member(username, personalNumber);
 
-            newMember.AddBoat(new Boat("cao", 5));
             SaveMember(newMember);
         }
 
