@@ -34,9 +34,6 @@ namespace Workshop_2.view
                 try
                 {
                     name = Console.ReadLine();
-
-
-
                     if (name.Length < 2)
                     {
                         throw new Exception("Name is to short!");
@@ -56,7 +53,7 @@ namespace Workshop_2.view
         {
             string personalNumber = "";
             bool shouldLoop = true;
-            
+
             do
             {
                 Console.Write("Personal Number: ");
@@ -72,7 +69,6 @@ namespace Workshop_2.view
                         }
                     }
 
-
                     if (personalNumber.Length < 10)
                     {
                         throw new Exception("Personal Number must be 10 numbers long.");
@@ -86,7 +82,7 @@ namespace Workshop_2.view
                 }
                 catch (Exception error)
                 {
-                    Console.WriteLine(error.Message);
+                    Console.WriteLine(error);
                 }
             } while (shouldLoop);
             return personalNumber;

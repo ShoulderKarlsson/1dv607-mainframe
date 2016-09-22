@@ -1,17 +1,22 @@
 [
   {
-    "Name": "Loke",
-    "PersonalNumber": "4545454545",
-    "MemberBoats": []
+    "Name": "Slarreboaten",
+    "PersonalNumber": "1333333336",
+    "MemberBoats": [
+      {
+        "Type": "cao",
+        "Length": 5
+      }
+    ]
   },
   {
-    "Name": "ajsfkjasfasf",
-    "PersonalNumber": "123123123123123123",
-    "MemberBoats": []
-  },
-  {
-    "Name": "LokeIGEN",
-    "PersonalNumber": "7506100550",
-    "MemberBoats": []
+    "Name": "Axel",
+    "PersonalNumber": "1333333337",
+    "MemberBoats": [
+      {
+        "Type": "cao",
+        "Length": 5
+      }
+    ]
   }
 ]

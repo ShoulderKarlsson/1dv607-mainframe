@@ -11,21 +11,6 @@ namespace Workshop_2.model
 {
     class Database
     {
-        //        string filePath = "..\\..\\db\\members.json";
-        //        string json;
-        //        using (StreamReader r = new StreamReader(filePath))
-        //        {
-        //            json = r.ReadToEnd();
-        //        }
-        //          List<model.User> numbers = JsonConvert.DeserializeObject<List<model.User>>(json);
-        //        foreach (var user in numbers)
-        //        {
-        //            Console.WriteLine(user.username);
-        //            Console.WriteLine(user.personal_id);
-        //        }
-
-        
-
         private string filePath = @"..\..\db\members.json";
         private List<Member> _storedMembers;
 
@@ -41,6 +26,12 @@ namespace Workshop_2.model
         public bool IsPersonalNumberTaken(string personalNumber)
         {
             bool found = false;
+            if (_storedMembers == null)
+            {
+                _storedMembers = new List<Member>();
+            }
+
+
             foreach (Member memberInfo in _storedMembers)
             {
                 if (memberInfo.PersonalNumber == personalNumber)

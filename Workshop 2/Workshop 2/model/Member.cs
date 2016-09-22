@@ -40,7 +40,7 @@ namespace Workshop_2.model
 
         public List<Boat> MemberBoats
         {
-            get { return new List<Boat>(_memberBoats);}
+            get { return _memberBoats; }
         }
 
         public void AddBoat(Boat boat)

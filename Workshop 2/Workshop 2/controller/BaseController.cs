@@ -12,8 +12,8 @@ namespace Workshop_2.controller
         {
             view.BaseUI bUI = new view.BaseUI();
             controller.RegisterController rController = new RegisterController();
+            controller.DeleteController dController = new DeleteController();
             bUI.WelcomeMessage();
-
             do
             {
                 switch (bUI.GetUserInput())
@@ -21,6 +21,10 @@ namespace Workshop_2.controller
                     case ConsoleKey.R:
                         Console.Clear();
                         rController.CollectInformation();
+                        break;
+                    case ConsoleKey.D:
+                        Console.Clear();
+                        dController.CollectInformation();
                         break;
                 }
             } while (Console.ReadKey().Key != ConsoleKey.Q);
