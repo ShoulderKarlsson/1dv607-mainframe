@@ -1,35 +1,7 @@
 [
   {
-    "Name": "Loke",
+    "Name": "asdf",
     "PersonalNumber": "1111111111",
     "MemberBoats": []
-  },
-  {
-    "Name": "Kinge",
-    "PersonalNumber": "2222222222",
-    "MemberBoats": [
-      {
-        "Type": "canoe",
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Name": "Axeeeeeeeeeeeeel",
-    "PersonalNumber": "3333333333",
-    "MemberBoats": [
-      {
-        "Type": "eka",
-        "Length": 5
-      },
-      {
-        "Type": "canoe",
-        "Length": 5
-      },
-      {
-        "Type": "boaty mc boatface",
-        "Length": 5
-      }
-    ]
-  } 
+  }
 ]

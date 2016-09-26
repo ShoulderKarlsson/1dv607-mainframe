@@ -31,8 +31,9 @@ namespace Workshop_2.view
                     name = Console.ReadLine();
                     if (name.Length < 2)
                     {
-                        throw new Exception("Name is to short!");
+                        throw new Exception("Name is too short!");
                     }
+
                     shouldLoop = false;
                 }
                 catch (Exception error)

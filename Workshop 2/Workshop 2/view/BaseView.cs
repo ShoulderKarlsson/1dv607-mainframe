@@ -15,6 +15,9 @@ namespace Workshop_2.view
         {
             _DAL = DAL;
         }
+
+
+
         public virtual string GetUserPersonalNumber()
         {
             string personalNumber = "";
@@ -27,24 +30,9 @@ namespace Workshop_2.view
                 {
                     personalNumber = Console.ReadLine();
 
-                    foreach (char letter in personalNumber)
-                    {
-                        if (!char.IsDigit(letter))
-                        {
-                            throw new Exception("Can only be numbers in personal number.");
-                        }
-                    }
-
-
-                    if (personalNumber.Length < 10)
-                    {
-                        throw new Exception("Personal Number must be 10 numbers long.");
-                    }
-
-                    if (_DAL.IsPersonalNumberTaken(personalNumber))
-                    {
-                        throw new Exception("That personal number is already registered, try again.");
-                    }
+                    CheckIfLetters(personalNumber);
+                    CheckLength(personalNumber);
+                    CheckAlreadyExists(personalNumber);
                     shouldLoop = false;
                 }
                 catch (Exception error)
@@ -53,6 +41,33 @@ namespace Workshop_2.view
                 }
             } while (shouldLoop);
             return personalNumber;
+        }
+
+        protected void CheckLength(string personalNumber)
+        {
+            if (personalNumber.Length < 10)
+            {
+                throw new Exception("Personal Number must be 10 numbers long.");
+            }
+        }
+
+        protected virtual void CheckAlreadyExists(string personalNumber)
+        {
+            if (_DAL.IsPersonalNumberTaken(personalNumber))
+            {
+                throw new Exception("That personal number is already registered, try again.");
+            }
+        }
+
+        protected void CheckIfLetters(string personalNumber)
+        {
+            foreach (char letter in personalNumber)
+            {
+                if (!char.IsDigit(letter))
+                {
+                    throw new Exception("Can only be numbers in personal number.");
+                }
+            }
         }
     }
 }

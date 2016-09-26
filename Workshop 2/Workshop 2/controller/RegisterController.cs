@@ -20,7 +20,6 @@ namespace Workshop_2.controller
             _rView = new RegisterView(_DAL);
         }
         
-
         public void CollectInformation()
         {
             _rView.Render();
@@ -28,9 +27,6 @@ namespace Workshop_2.controller
             string username = _rView.GetUsername();
             string personalNumber = _rView.GetUserPersonalNumber();
             model.Member newMember = new model.Member(username, personalNumber);
-            newMember.AddBoat(new Boat("eka", 5));
-            newMember.AddBoat(new Boat("canoe", 5));
-            newMember.AddBoat(new Boat("boaty mc boatface", 5));
 
             SaveMember(newMember);
         }

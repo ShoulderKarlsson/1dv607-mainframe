@@ -51,7 +51,6 @@ namespace Workshop_2.view
         {
 
             string choice = "";
-            int number;
             bool shouldLoop = true;
             Console.WriteLine("What would like to update? \n " +
                               "1. Name \n " +
@@ -64,6 +63,7 @@ namespace Workshop_2.view
                 {
                     choice = Console.ReadLine();
 
+                    int number;
                     bool isNumeric = int.TryParse(choice, out number);
 
                     if (!isNumeric || number > 3 || number <= 0)
