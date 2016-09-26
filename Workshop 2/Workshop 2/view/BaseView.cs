@@ -43,7 +43,7 @@ namespace Workshop_2.view
 
         protected void CheckLength(string personalNumber)
         {
-            if (personalNumber.Length < 10)
+            if (personalNumber.Length != 10)
             {
                 throw new Exception("Personal Number must be 10 numbers long.");
             }

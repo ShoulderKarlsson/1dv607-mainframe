@@ -88,9 +88,28 @@ namespace Workshop_2.view
 
 
         }
-        public void EditNumber(string personalNumber)
+        public string EditNumber(string personalNumber)
         {
-            Console.WriteLine("Number");
+            string newPersonalNumber = "";
+            bool loop = true;
+            do
+            {
+                Console.Write("New personal number: ");
+                try
+                {
+                    newPersonalNumber = Console.ReadLine();
+                    CheckIfLetters(newPersonalNumber);
+                    CheckLength(newPersonalNumber);
+                    CheckAlreadyExists(newPersonalNumber);
+                    loop = false;
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+            } while (loop);
+
+            return newPersonalNumber;
         }
         public void EditBoat(string personalNumber)
         {

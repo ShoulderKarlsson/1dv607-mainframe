@@ -26,8 +26,8 @@ namespace Workshop_2.controller
             
             string username = _rView.GetUsername();
             string personalNumber = _rView.GetUserPersonalNumber();
-            model.Member newMember = new model.Member(username, personalNumber);
-
+            int memberId = _DAL.QueryLowestAvailable();
+            model.Member newMember = new model.Member(username, personalNumber, memberId);
             SaveMember(newMember);
         }
 

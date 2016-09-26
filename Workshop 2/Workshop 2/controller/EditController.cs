@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,12 +42,18 @@ namespace Workshop_2.controller
                     UpdateName(newName);
                     break;
                 case "2":
-                    _eView.EditNumber(personalNumber);
+                    string pNumb = _eView.EditNumber(personalNumber);
+                    UpdatePersonalNumber(pNumb);
                     break;
                 case "3":
                     _eView.EditBoat(personalNumber);
                     break;
             }
+        }
+
+        private void UpdatePersonalNumber(string newPn)
+        {
+            _DAL.UpdateUser(_memberInfo, newPn);
         }
 
         private void UpdateName(string name)

@@ -92,6 +92,21 @@ namespace Workshop_2.model
             UpdateDatabase();
         }
 
+        public void UpdateUser(model.Member memberCredentials, string newPn)
+        {
+            for (int i = 0; i < _storedMembers.Count; i++)
+            {
+                if (_storedMembers[i].PersonalNumber == memberCredentials.PersonalNumber)
+                {
+                    memberCredentials.PersonalNumber = newPn;
+                    _storedMembers[i] = memberCredentials;
+                    break; // Premature optimization is the root of all evil.
+                }
+            }
+
+            UpdateDatabase();
+        }
+
         private List<model.Member> GetMembers()
         {
             string json;
@@ -101,5 +116,8 @@ namespace Workshop_2.model
             }
             return JsonConvert.DeserializeObject<List<model.Member>>(json);
         }
+
+
+        public int QueryLowestAvailable() => _storedMembers.Count == 0 ? 1 : _storedMembers.OrderBy(m => m.Id).Last().Id + 1;
     }
 }
