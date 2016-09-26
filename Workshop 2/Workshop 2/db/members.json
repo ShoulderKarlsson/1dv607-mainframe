@@ -1,11 +1,5 @@
 [
   {
-    "Name": "Kingen",
-    "PersonalNumber": "1231231231",
-    "Id": 1,
-    "MemberBoats": []
-  },
-  {
     "Name": "fasjkdfhkasjldhf",
     "PersonalNumber": "1231231234",
     "Id": 3,
@@ -30,9 +24,24 @@
     "MemberBoats": []
   },
   {
-    "Name": "Sven Åke",
-    "PersonalNumber": "6969696969",
-    "Id": 7,
+    "Name": "Loke Kingen",
+    "PersonalNumber": "1357135721",
+    "Id": 8,
+    "MemberBoats": [
+      {
+        "Type": "Kajak",
+        "Length": 42
+      },
+      {
+        "Type": "Loke",
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Name": "Sven Göran",
+    "PersonalNumber": "9373823723",
+    "Id": 9,
     "MemberBoats": [
       {
         "Type": "Kajak",

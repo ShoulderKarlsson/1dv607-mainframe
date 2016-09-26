@@ -37,6 +37,8 @@ namespace Workshop_2.controller
                         lController.CollectInformation();
                         break;
                 }
+
+                Init();
             } while (Console.ReadKey().Key != ConsoleKey.Q);
         }
     }
