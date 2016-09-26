@@ -68,7 +68,7 @@ namespace Workshop_2.model
 
         public model.Member GetUserInfo(string personalNumber)
         {
-            foreach (Member member in _storedMembers)
+            foreach (model.Member member in _storedMembers)
             {
                 if (member.PersonalNumber == personalNumber)
                 {
@@ -79,9 +79,17 @@ namespace Workshop_2.model
             return null;
         }
 
-        public void UpdateUser()
+        public void UpdateUser(model.Member memberCredentials)
         {
-            
+            for (int i = 0; i < _storedMembers.Count; i++)
+            {
+                if (_storedMembers[i].PersonalNumber == memberCredentials.PersonalNumber)
+                {
+                    _storedMembers[i] = memberCredentials;
+                }
+            }
+
+            UpdateDatabase();
         }
 
         private List<model.Member> GetMembers()

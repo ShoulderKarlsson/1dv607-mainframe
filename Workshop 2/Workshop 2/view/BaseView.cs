@@ -16,8 +16,6 @@ namespace Workshop_2.view
             _DAL = DAL;
         }
 
-
-
         public virtual string GetUserPersonalNumber()
         {
             string personalNumber = "";

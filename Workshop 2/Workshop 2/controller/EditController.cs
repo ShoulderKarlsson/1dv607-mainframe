@@ -13,6 +13,7 @@ namespace Workshop_2.controller
     {
         private readonly model.Database _DAL;
         private readonly view.EditView _eView;
+        private model.Member _memberInfo;
 
         public EditController()
         {
@@ -24,8 +25,8 @@ namespace Workshop_2.controller
         {
             _eView.Render();
             string personalNumber = _eView.GetUserPersonalNumber();
-            Member memberInfo = _DAL.GetUserInfo(personalNumber);
-            _eView.PresentMemberInfo(memberInfo);
+            _memberInfo = _DAL.GetUserInfo(personalNumber);
+            _eView.PresentMemberInfo(_memberInfo);
             string choice = _eView.GetUserChoice();
             MakeChange(choice, personalNumber);
 
@@ -36,7 +37,8 @@ namespace Workshop_2.controller
             switch (choice)
             {
                 case "1":
-                    _eView.EditName(personalNumber);
+                    string newName = _eView.EditName(personalNumber);
+                    UpdateName(newName);
                     break;
                 case "2":
                     _eView.EditNumber(personalNumber);
@@ -45,6 +47,12 @@ namespace Workshop_2.controller
                     _eView.EditBoat(personalNumber);
                     break;
             }
+        }
+
+        private void UpdateName(string name)
+        {
+            _memberInfo.Name = name;
+            _DAL.UpdateUser(_memberInfo);
         }
     }
 }

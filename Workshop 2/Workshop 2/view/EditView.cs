@@ -81,10 +81,12 @@ namespace Workshop_2.view
             return choice;
         }
 
-        public void EditName(string personalNumber)
+        public string EditName(string personalNumber)
         {
+            Console.Write("New name:");
+            return Console.ReadLine();
 
-            Console.WriteLine("Name");
+
         }
         public void EditNumber(string personalNumber)
         {

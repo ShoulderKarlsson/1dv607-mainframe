@@ -29,11 +29,7 @@ namespace Workshop_2.view
                 try
                 {
                     name = Console.ReadLine();
-                    if (name.Length < 2)
-                    {
-                        throw new Exception("Name is too short!");
-                    }
-
+                    ValidateLength(name);
                     shouldLoop = false;
                 }
                 catch (Exception error)
@@ -43,6 +39,14 @@ namespace Workshop_2.view
             } while (shouldLoop);
 
             return name;
+        }
+
+        private void ValidateLength(string name)
+        {
+            if (name.Length < 2)
+            {
+                throw new Exception("Name is too short!");
+            }
         }
     }
 }

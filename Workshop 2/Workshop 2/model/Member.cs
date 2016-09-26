@@ -20,7 +20,7 @@ namespace Workshop_2.model
         }
 
 
-        public string Name { get; }
+        public string Name { get; set; }
 
         public string PersonalNumber { get; }
 

@@ -1,7 +1,12 @@
 [
   {
-    "Name": "asdf",
+    "Name": "lexa",
     "PersonalNumber": "1111111111",
+    "MemberBoats": []
+  },
+  {
+    "Name": "bmats",
+    "PersonalNumber": "1231231231",
     "MemberBoats": []
   }
 ]
