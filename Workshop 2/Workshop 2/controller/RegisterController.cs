@@ -28,6 +28,8 @@ namespace Workshop_2.controller
             string personalNumber = _rView.GetUserPersonalNumber();
             int memberId = _DAL.QueryLowestAvailable();
             model.Member newMember = new model.Member(username, personalNumber, memberId);
+            newMember.AddBoat(new Boat("Kajak", 42));
+            newMember.AddBoat(new Boat("Loke", 2));
             SaveMember(newMember);
         }
 

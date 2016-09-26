@@ -117,7 +117,13 @@ namespace Workshop_2.model
             return JsonConvert.DeserializeObject<List<model.Member>>(json);
         }
 
+        public List<Member> GetMemberList()
+        {
+            return _storedMembers;
+        }
 
-        public int QueryLowestAvailable() => _storedMembers.Count == 0 ? 1 : _storedMembers.OrderBy(m => m.Id).Last().Id + 1;
+
+        public int QueryLowestAvailable() => _storedMembers.Count == 0 ? 1 : 
+            _storedMembers.OrderBy(m => m.Id).Last().Id + 1;
     }
 }

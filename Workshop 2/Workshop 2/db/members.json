@@ -16,5 +16,32 @@
     "PersonalNumber": "1231231235",
     "Id": 4,
     "MemberBoats": []
+  },
+  {
+    "Name": "Ricky",
+    "PersonalNumber": "1231231239",
+    "Id": 5,
+    "MemberBoats": []
+  },
+  {
+    "Name": "Slarre Kingen",
+    "PersonalNumber": "9602117096",
+    "Id": 6,
+    "MemberBoats": []
+  },
+  {
+    "Name": "Sven Åke",
+    "PersonalNumber": "6969696969",
+    "Id": 7,
+    "MemberBoats": [
+      {
+        "Type": "Kajak",
+        "Length": 42
+      },
+      {
+        "Type": "Loke",
+        "Length": 2
+      }
+    ]
   }
 ]

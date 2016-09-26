@@ -14,6 +14,7 @@ namespace Workshop_2.controller
             controller.RegisterController rController = new RegisterController();
             controller.DeleteController dController = new DeleteController();
             controller.EditController eController = new EditController();
+            controller.ListController lController = new ListController();
             bUI.WelcomeMessage();
             do
             {
@@ -30,6 +31,10 @@ namespace Workshop_2.controller
                     case ConsoleKey.E:
                         Console.Clear();
                         eController.CollectInformation();
+                        break;
+                    case ConsoleKey.L:
+                        Console.Clear();
+                        lController.CollectInformation();
                         break;
                 }
             } while (Console.ReadKey().Key != ConsoleKey.Q);

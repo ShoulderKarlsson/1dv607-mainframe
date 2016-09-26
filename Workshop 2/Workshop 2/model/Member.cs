@@ -34,10 +34,15 @@ namespace Workshop_2.model
             MemberBoats.Add(boat);
         }
 
-        public override string ToString()
+        public string VerboseToString()
         {
             string boats = CollectBoats();
-            return $"Name: {Name} \n Personal Number: {PersonalNumber} \n {boats} \n {Id}";
+            return $"\nID: {Id} \nName: {Name} \nPersonal Number: {PersonalNumber} \nBoats: {boats}";
+        }
+
+        public string CompactToString()
+        {
+            return $"\nID: {Id} \nName: {Name} \nNumber of boats: {MemberBoats.Count}";
         }
 
         private string CollectBoats()
