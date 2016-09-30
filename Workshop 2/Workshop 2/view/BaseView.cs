@@ -9,11 +9,11 @@ namespace Workshop_2.view
     abstract class BaseView
     {
 
-        protected model.Database _DAL;
+        protected model.MemberOperations _memberOps;
 
-        protected BaseView(model.Database DAL)
+        protected BaseView(model.MemberOperations mOps)
         {
-            _DAL = DAL;
+            _memberOps = mOps;
         }
 
         public virtual string GetUserPersonalNumber()
@@ -51,7 +51,7 @@ namespace Workshop_2.view
 
         protected virtual void CheckAlreadyExists(string personalNumber)
         {
-            if (_DAL.IsPersonalNumberTaken(personalNumber))
+            if (_memberOps.IsPersonalNumberTaken(personalNumber))
             {
                 throw new Exception("That personal number is already registered, try again.");
             }

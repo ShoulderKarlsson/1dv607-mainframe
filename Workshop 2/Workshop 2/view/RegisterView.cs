@@ -10,8 +10,8 @@ namespace Workshop_2.view
 {
     class RegisterView : BaseView
     {
-        public RegisterView(model.Database DAL) : base(DAL) {}
-
+        public RegisterView(model.MemberOperations mOps) : base(mOps) {}
+        
         public void Render()
         {
             Console.WriteLine("Enter information about new user.. =)");

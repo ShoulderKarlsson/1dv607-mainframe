@@ -13,20 +13,23 @@ namespace Workshop_2.controller
     class EditController
     {
         private readonly model.Database _DAL;
+        private readonly model.MemberOperations _memberOperations;
         private readonly view.EditView _eView;
         private model.Member _memberInfo;
 
         public EditController()
         {
             _DAL = new model.Database();
-            _eView = new view.EditView(_DAL);
+            model.MemberCatalog mOps = new MemberCatalog(_DAL);
+            _memberOperations = new MemberOperations(mOps, _DAL);
+            _eView = new view.EditView(_memberOperations);
         }
 
         public void CollectInformation()
         {
             _eView.Render();
             string personalNumber = _eView.GetUserPersonalNumber();
-            _memberInfo = _DAL.GetUserInfo(personalNumber);
+            _memberInfo = _memberOperations.GetUserInfo(personalNumber);
             _eView.PresentMemberInfo(_memberInfo);
             string choice = _eView.GetUserChoice();
             MakeChange(choice, personalNumber);
@@ -53,13 +56,13 @@ namespace Workshop_2.controller
 
         private void UpdatePersonalNumber(string newPn)
         {
-            _DAL.UpdateUser(_memberInfo, newPn);
+            _memberOperations.UpdateUser(_memberInfo, newPn);
         }
 
         private void UpdateName(string name)
         {
             _memberInfo.Name = name;
-            _DAL.UpdateUser(_memberInfo);
+            _memberOperations.UpdateUser(_memberInfo);
         }
     }
 }

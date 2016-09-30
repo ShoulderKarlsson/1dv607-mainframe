@@ -10,7 +10,7 @@ namespace Workshop_2.view
 {
     class EditView : BaseView
     {
-        public EditView(model.Database DAL) : base(DAL) { }
+        public EditView(model.MemberOperations mOps) : base(mOps) { }
 
         public void Render()
         {
@@ -33,7 +33,7 @@ namespace Workshop_2.view
                         throw new Exception("Personal Number must be 10 numbers long.");
                     }
 
-                    if (!_DAL.IsPersonalNumberTaken(personalNumber))
+                    if (!_memberOps.IsPersonalNumberTaken(personalNumber))
                     {
                         throw new Exception("That user does not exist.");
                     }

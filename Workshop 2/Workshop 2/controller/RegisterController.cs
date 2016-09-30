@@ -11,13 +11,16 @@ namespace Workshop_2.controller
 {
     class RegisterController
     {
-        private readonly model.Database _DAL;
+        private readonly model.MemberOperations _memberOps;
+        private readonly model.MemberCatalog _memberCat;
         private readonly view.RegisterView _rView;
 
         public RegisterController()
         {
-            _DAL = new Database();
-            _rView = new RegisterView(_DAL);
+            Database db = new Database();
+            _memberCat = new MemberCatalog(db);
+            _memberOps = new MemberOperations(_memberCat, db);
+            _rView = new RegisterView(_memberOps);
         }
         
         public void CollectInformation()
@@ -26,16 +29,16 @@ namespace Workshop_2.controller
             
             string username = _rView.GetUsername();
             string personalNumber = _rView.GetUserPersonalNumber();
-            int memberId = _DAL.QueryLowestAvailable();
+
+            int memberId = _memberOps.GenerateID();
+
             model.Member newMember = new model.Member(username, personalNumber, memberId);
-            newMember.AddBoat(new Boat("Kajak", 42));
-            newMember.AddBoat(new Boat("Loke", 2));
             SaveMember(newMember);
         }
 
         private void SaveMember(Member member)
         {
-            _DAL.AddUser(member);
+            _memberOps.AddUser(member);
         }
     }
 }

@@ -45,6 +45,12 @@ namespace Workshop_2.model
             return $"\nID: {Id} \nName: {Name} \nNumber of boats: {MemberBoats.Count}";
         }
 
+        public override string ToString()
+        {
+            string boats = CollectBoats();
+            return $"\nName: {Name} \nPersonal Number: {PersonalNumber} \nBoats: {boats}";
+        }
+
         private string CollectBoats()
         {
             StringBuilder sb = new StringBuilder();

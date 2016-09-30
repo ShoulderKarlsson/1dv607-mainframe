@@ -9,7 +9,7 @@ namespace Workshop_2.view
 {
     class DeleteView : BaseView
     {
-        public DeleteView(Database DAL) : base(DAL) { }
+        public DeleteView(MemberOperations mOps) : base(mOps) { }
 
         public void Render()
         {
@@ -18,7 +18,7 @@ namespace Workshop_2.view
 
         protected override void CheckAlreadyExists(string personalNumber)
         {
-            if (!_DAL.IsPersonalNumberTaken(personalNumber))
+            if (!_memberOps.IsPersonalNumberTaken(personalNumber))
             {
                 throw new Exception("That user does not exist.");
             }

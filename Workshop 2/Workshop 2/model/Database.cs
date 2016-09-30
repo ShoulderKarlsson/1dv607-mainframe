@@ -40,73 +40,74 @@ namespace Workshop_2.model
             return found;
         }
 
-        public void AddUser(Member newMember)
-        {
-            
-            _storedMembers.Add(newMember);
-            UpdateDatabase();
-        }
+        //public void AddUser(Member newMember)
+        //{
 
-        private void UpdateDatabase()
+        //    _storedMembers.Add(newMember);
+        //    UpdateDatabase();
+        //}
+
+        public void UpdateDatabase(List<Member> mList)
         {
-            string json = JsonConvert.SerializeObject(_storedMembers, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(mList, Formatting.Indented);
             File.WriteAllText(filePath, json);
         }
 
-        public void RemoveUser(string personalNumber)
-        {
-            for (int mIx = 0; mIx < _storedMembers.Count; mIx++)
-            {
-                if (_storedMembers[mIx].PersonalNumber == personalNumber)
-                {
-                    _storedMembers.Remove(_storedMembers[mIx]);
-                }
-            }
+        //public void RemoveUser(string personalNumber)
+        //{
+        //    for (int mIx = 0; mIx < _storedMembers.Count; mIx++)
+        //    {
+        //        if (_storedMembers[mIx].PersonalNumber == personalNumber)
+        //        {
+        //            _storedMembers.Remove(_storedMembers[mIx]);
+        //        }
+        //    }
 
-            UpdateDatabase();
-        }
+        //    UpdateDatabase();
+        //}
 
-        public model.Member GetUserInfo(string personalNumber)
-        {
-            foreach (model.Member member in _storedMembers)
-            {
-                if (member.PersonalNumber == personalNumber)
-                {
-                    return member;
-                }
-            }
+        //public model.Member GetUserInfo(string personalNumber)
+        //{
+        //    foreach (model.Member member in _storedMembers)
+        //    {
+        //        if (member.PersonalNumber == personalNumber)
+        //        {
+        //            return member;
+        //        }
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
-        public void UpdateUser(model.Member memberCredentials)
-        {
-            for (int i = 0; i < _storedMembers.Count; i++)
-            {
-                if (_storedMembers[i].PersonalNumber == memberCredentials.PersonalNumber)
-                {
-                    _storedMembers[i] = memberCredentials;
-                }
-            }
+        //public void UpdateUser(model.Member memberCredentials)
+        //{
+        //    for (int i = 0; i < _storedMembers.Count; i++)
+        //    {
+        //        if (_storedMembers[i].PersonalNumber == memberCredentials.PersonalNumber)
+        //        {
+        //            _storedMembers[i] = memberCredentials;
+        //        }
+        //    }
 
-            UpdateDatabase();
-        }
+        //    UpdateDatabase();
+        //}
 
-        public void UpdateUser(model.Member memberCredentials, string newPn)
-        {
-            for (int i = 0; i < _storedMembers.Count; i++)
-            {
-                if (_storedMembers[i].PersonalNumber == memberCredentials.PersonalNumber)
-                {
-                    memberCredentials.PersonalNumber = newPn;
-                    _storedMembers[i] = memberCredentials;
-                    break; // Premature optimization is the root of all evil.
-                }
-            }
+        //public void UpdateUser(model.Member memberCredentials, string newPn)
+        //{
+        //    for (int i = 0; i < _storedMembers.Count; i++)
+        //    {
+        //        if (_storedMembers[i].PersonalNumber == memberCredentials.PersonalNumber)
+        //        {
+        //            memberCredentials.PersonalNumber = newPn;
+        //            _storedMembers[i] = memberCredentials;
+        //            break; // Premature optimization is the root of all evil.
+        //        }
+        //    }
 
-            UpdateDatabase();
-        }
+        //    UpdateDatabase();
+        //}
 
+        // Detta ska ligga kvar
         private List<model.Member> GetMembers()
         {
             string json;
@@ -121,9 +122,5 @@ namespace Workshop_2.model
         {
             return _storedMembers;
         }
-
-
-        public int QueryLowestAvailable() => _storedMembers.Count == 0 ? 1 : 
-            _storedMembers.OrderBy(m => m.Id).Last().Id + 1;
     }
 }

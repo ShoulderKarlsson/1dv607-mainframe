@@ -71,6 +71,8 @@
     <Compile Include="model\Boat.cs" />
     <Compile Include="model\Database.cs" />
     <Compile Include="model\Member.cs" />
+    <Compile Include="model\MemberCatalog.cs" />
+    <Compile Include="model\MemberOperations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
