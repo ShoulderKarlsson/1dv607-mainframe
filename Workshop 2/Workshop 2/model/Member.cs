@@ -36,7 +36,8 @@ namespace Workshop_2.model
 
         public string VerboseToString()
         {
-            string boats = CollectBoats();
+            
+            string boats = CollectBoats(); // Collecting the boats and stores them in variable boats
             return $"\nID: {Id} \nName: {Name} \nPersonal Number: {PersonalNumber} \nBoats: {boats}";
         }
 
