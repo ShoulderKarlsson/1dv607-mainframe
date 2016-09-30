@@ -28,15 +28,9 @@ namespace Workshop_2.view
                 {
                     personalNumber = Console.ReadLine();
 
-                    if (personalNumber.Length < 10)
-                    {
-                        throw new Exception("Personal Number must be 10 numbers long.");
-                    }
+                    CheckLength(personalNumber);
+                    CheckAlreadyExists(personalNumber);
 
-                    if (!_memberOps.IsPersonalNumberTaken(personalNumber))
-                    {
-                        throw new Exception("That user does not exist.");
-                    }
                     shouldLoop = false;
                 }
                 catch (Exception error)
@@ -45,6 +39,14 @@ namespace Workshop_2.view
                 }
             } while (shouldLoop);
             return personalNumber;
+        }
+
+        protected override void CheckAlreadyExists(string personalNumber)
+        {
+            if (!_memberOps.IsPersonalNumberTaken(personalNumber))
+            {
+                throw new Exception("That user does not exist.");
+            }
         }
 
         public string GetUserChoice()
@@ -81,14 +83,12 @@ namespace Workshop_2.view
             return choice;
         }
 
-        public string EditName(string personalNumber)
+        public string EditName()
         {
             Console.Write("New name:");
             return Console.ReadLine();
-
-
         }
-        public string EditNumber(string personalNumber)
+        public string EditNumber()
         {
             string newPersonalNumber = "";
             bool loop = true;
@@ -111,7 +111,7 @@ namespace Workshop_2.view
 
             return newPersonalNumber;
         }
-        public void EditBoat(string personalNumber)
+        public void EditBoat()
         {
             Console.WriteLine("Boat");
         }

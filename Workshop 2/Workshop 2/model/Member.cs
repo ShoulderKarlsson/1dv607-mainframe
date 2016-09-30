@@ -10,9 +10,6 @@ namespace Workshop_2.model
 {
     public class Member
     {
-        private int _id;
-        private int _fee = 0;
-
         public Member(string name, string personalNumber, int id)
         {
             Name = name;
@@ -37,7 +34,7 @@ namespace Workshop_2.model
         public string VerboseToString()
         {
             
-            string boats = CollectBoats(); // Collecting the boats and stores them in variable boats
+            string boats = CollectBoats();
             return $"\nID: {Id} \nName: {Name} \nPersonal Number: {PersonalNumber} \nBoats: {boats}";
         }
 

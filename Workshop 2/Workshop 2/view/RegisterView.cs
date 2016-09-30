@@ -14,8 +14,14 @@ namespace Workshop_2.view
         
         public void Render()
         {
-            Console.WriteLine("Enter information about new user.. =)");
+            Console.WriteLine("Add information! ");
         }
+
+        public void RenderBoatOption()
+        {
+            Console.WriteLine("Enter personal number for desired user to add boat.");
+        }
+
 
         public string GetUsername()
         {   
@@ -48,5 +54,6 @@ namespace Workshop_2.view
                 throw new Exception("Name is too short!");
             }
         }
+
     }
 }

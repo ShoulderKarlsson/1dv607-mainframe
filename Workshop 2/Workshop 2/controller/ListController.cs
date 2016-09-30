@@ -36,6 +36,9 @@ namespace Workshop_2.controller
                 case "2":
                     _listView.DisplayVerbose(users);
                     break;
+                case "3":
+                    _listView.DisplayVerbose(users);
+                    break;
             }
         }
 

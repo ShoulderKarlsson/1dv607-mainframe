@@ -36,6 +36,9 @@ namespace Workshop_2.controller
                         Console.Clear();
                         lController.CollectInformation();
                         break;
+                    case ConsoleKey.B:
+                        Console.Clear();
+
                 }
 
                 Init();

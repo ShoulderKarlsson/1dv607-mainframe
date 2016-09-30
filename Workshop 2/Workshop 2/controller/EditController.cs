@@ -32,24 +32,24 @@ namespace Workshop_2.controller
             _memberInfo = _memberOperations.GetUserInfo(personalNumber);
             _eView.PresentMemberInfo(_memberInfo);
             string choice = _eView.GetUserChoice();
-            MakeChange(choice, personalNumber);
-
+            MakeChange(choice);
         }
 
-        private void MakeChange(string choice, string personalNumber)
+        private void MakeChange(string choice)
         {
+
             switch (choice)
             {
                 case "1":
-                    string newName = _eView.EditName(personalNumber);
+                    string newName = _eView.EditName();
                     UpdateName(newName);
                     break;
                 case "2":
-                    string pNumb = _eView.EditNumber(personalNumber);
+                    string pNumb = _eView.EditNumber();
                     UpdatePersonalNumber(pNumb);
                     break;
                 case "3":
-                    _eView.EditBoat(personalNumber);
+                    _eView.EditBoat();
                     break;
             }
         }

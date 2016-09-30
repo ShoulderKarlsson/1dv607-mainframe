@@ -17,6 +17,8 @@ namespace Workshop_2.view
             Console.WriteLine("Press 'D' to delete member");
             Console.WriteLine("Press 'E' to edit a member");
             Console.WriteLine("Press 'L' to list members");
+            Console.WriteLine("Press 'B' to add boat");
+
         }
 
 
