@@ -41,6 +41,12 @@ namespace Workshop_2.view
             return personalNumber;
         }
 
+        public virtual string GetUserPersonalNumber(string isBoat)
+        {
+
+            return isBoat;
+        }
+
         protected void CheckLength(string personalNumber)
         {
             if (personalNumber.Length != 10)

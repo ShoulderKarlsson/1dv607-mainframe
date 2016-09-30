@@ -8,5 +8,6 @@ namespace Workshop_2.controller
 {
     class AddBoatController
     {
+
     }
 }

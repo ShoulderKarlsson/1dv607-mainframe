@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\AddBoatController.cs" />
     <Compile Include="controller\BaseController.cs" />
     <Compile Include="controller\DeleteController.cs" />
     <Compile Include="controller\EditController.cs" />
@@ -80,6 +81,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="view\AddBoatView.cs" />
     <Compile Include="view\BaseUI.cs" />
     <Compile Include="view\BaseView.cs" />
     <Compile Include="view\DeleteView.cs" />
