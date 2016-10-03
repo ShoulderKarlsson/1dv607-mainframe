@@ -1,60 +1,26 @@
 [
   {
-    "Name": "fasjkdfhkasjldhf",
+    "Name": "Serious User",
+    "PersonalNumber": "1231231231",
+    "Id": 1,
+    "MemberBoats": [
+      {
+        "ID": 1,
+        "Type": "barkboat",
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Name": "Refactor_USERKINGE_SLARRE",
+    "PersonalNumber": "1231231232",
+    "Id": 2,
+    "MemberBoats": []
+  },
+  {
+    "Name": "Kingen",
     "PersonalNumber": "1231231234",
     "Id": 3,
-    "MemberBoats": [
-      {
-        "ID": 1,
-        "Type": "LokeVollvooof",
-        "Length": 40
-      }
-    ]
-  },
-  {
-    "Name": "Ricky",
-    "PersonalNumber": "1231231239",
-    "Id": 5,
     "MemberBoats": []
-  },
-  {
-    "Name": "Barkboj",
-    "PersonalNumber": "9602117096",
-    "Id": 6,
-    "MemberBoats": []
-  },
-  {
-    "Name": "Loke Kingen",
-    "PersonalNumber": "1357135721",
-    "Id": 8,
-    "MemberBoats": [
-      {
-        "ID": 1,
-        "Type": "Kajak",
-        "Length": 42
-      },
-      {
-        "ID": 2,
-        "Type": "Loke",
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Name": "Sven Göran",
-    "PersonalNumber": "9373823723",
-    "Id": 9,
-    "MemberBoats": [
-      {
-        "ID": 1,
-        "Type": "Kajak",
-        "Length": 42
-      },
-      {
-        "ID": 2,
-        "Type": "Loke",
-        "Length": 2
-      }
-    ]
   }
 ]

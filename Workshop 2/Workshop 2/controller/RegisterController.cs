@@ -27,12 +27,17 @@ namespace Workshop_2.controller
         public void CollectInformation()
         {
             _rView.Render();
-            
-            string username = _rView.GetUsername();
+
+            //MemberPersonalNumber personalNumber = GetPersonalNumber();
+
+
+
+
+            MemberName mN = _rView.GetName();
             string personalNumber = _rView.GetUserPersonalNumber();
             int memberId = _memberOps.GenerateID();
-
-            model.Member newMember = new model.Member(username, personalNumber, memberId);
+            model.Member newMember = new model.Member(mN.Name, personalNumber, memberId);
+            //model.Member newMember = new model.Member(mN.Name, personalNumber.PersonalNumber, memberId);
             SaveMember(newMember);
         }
 
@@ -40,5 +45,17 @@ namespace Workshop_2.controller
         {
             _memberOps.AddUser(member);
         }
+
+        /*private MemberPersonalNumber GetPersonalNumber()
+        {
+            MemberPersonalNumber personalNumber = _rView.GetPersonalNumber();
+
+            if (_rView.CheckAlreadyExists(personalNumber.PersonalNumber))
+            {
+                GetPersonalNumber();
+            }
+
+            return personalNumber;
+        }*/
     }
 }

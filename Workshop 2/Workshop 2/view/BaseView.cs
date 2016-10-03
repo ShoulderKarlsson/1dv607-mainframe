@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
+using Workshop_2.model;
 
 namespace Workshop_2.view
 {
@@ -15,6 +17,24 @@ namespace Workshop_2.view
         {
             _memberOps = mOps;
         }
+
+        /*
+        public virtual MemberPersonalNumber GetPersonalNumber()
+        {
+            do
+            {
+                try
+                {
+                    return new MemberPersonalNumber(Console.ReadLine());
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+            } while (true);
+        }
+        */
+
 
         public virtual string GetUserPersonalNumber()
         {
@@ -41,12 +61,6 @@ namespace Workshop_2.view
             return personalNumber;
         }
 
-        public virtual string GetUserPersonalNumber(string isBoat)
-        {
-
-            return isBoat;
-        }
-
         protected void CheckLength(string personalNumber)
         {
             if (personalNumber.Length != 10)
@@ -63,6 +77,12 @@ namespace Workshop_2.view
             }
         }
 
+        //public virtual bool CheckAlreadyExists(string personalNumber)
+        //{
+        //    return _memberOps.IsPersonalNumberTaken(personalNumber);
+        //}
+
+
         protected void CheckIfLetters(string personalNumber)
         {
             foreach (char letter in personalNumber)
@@ -73,7 +93,5 @@ namespace Workshop_2.view
                 }
             }
         }
-
-
     }
 }
