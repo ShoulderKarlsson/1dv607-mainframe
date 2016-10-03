@@ -15,13 +15,6 @@ namespace Workshop_2.controller
         private readonly model.MemberCatalog _memberCat;
         private readonly view.AddBoatView _abView;
 
-        /// <summary>
-        /// 1. Get personal number (Got it)
-        /// 2. Input type of boat (GOT it)
-        /// 3. Input length of boat (GOT it)
-        /// 3. (WE) add ID to boat.
-        /// </summary>
-
         public AddBoatController()
         {
             model.Database db = new Database();
@@ -32,8 +25,45 @@ namespace Workshop_2.controller
         public void CollectInformation()
         {
             string personalNumber = _abView.GetUserPersonalNumber();
-            model.Boat newBoat = _abView.GetNewBoatDetails();
+            BoatLength bl = _abView.GetBoatLength();
+            BoatType bt = _abView.GetBoatType();
+
+            // Will always be int, validating when setting value.
+            Boat newBoat = new Boat(bt.Type, int.Parse(bl.Length));
             _memberOps.SaveBoat(newBoat, personalNumber);
         }
+
+        private BoatLength GetBoatLength()
+        {
+            BoatLength bl = null;
+            try
+            {
+                bl = GetBoatLength();
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error.Message);
+                GetBoatLength();
+            }
+
+            return bl;
+        }
+
+        private BoatType GetBoatType()
+        {
+            BoatType bt = null;
+            try
+            {
+                bt = GetBoatType();
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error.Message);
+                GetBoatType();
+            }
+
+            return bt;
+        }
+
     }
 }

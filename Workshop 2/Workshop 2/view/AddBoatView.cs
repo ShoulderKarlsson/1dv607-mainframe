@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -10,10 +11,7 @@ namespace Workshop_2.view
 {
     class AddBoatView : BaseView
     {
-        public AddBoatView(model.MemberOperations mOps) : base(mOps)
-        {
-            
-        }
+        public AddBoatView(model.MemberOperations mOps) : base(mOps) { }
 
         protected override void CheckAlreadyExists(string personalNumber)
         {
@@ -22,27 +20,38 @@ namespace Workshop_2.view
                 throw new Exception("That user does not exist.");
             }
         }
-
-        public model.Boat GetNewBoatDetails()
+        public BoatLength GetBoatLength()
         {
+            do
+            {
+                Console.Write("Boat Length: ");
 
-            string boatType = GetBoatType();
-            int boatLength = GetBoatLength();
-
-            return new Boat(boatType, boatLength);
-
+                try
+                {
+                    return new BoatLength(Console.ReadLine());
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+            } while (true);
         }
 
-        private int GetBoatLength()
+        public BoatType GetBoatType()
         {
-            Console.Write("Boat length: ");
-            return int.Parse(Console.ReadLine());
-        }
+            do
+            {
+                Console.Write("Boat Type: ");
 
-        private string GetBoatType()
-        {
-            Console.Write("Boat type: ");
-            return Console.ReadLine();
+                try
+                {
+                    return new BoatType(Console.ReadLine());
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+            } while (true);
         }
     }
 }

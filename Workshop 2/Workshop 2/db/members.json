@@ -5,9 +5,9 @@
     "Id": 3,
     "MemberBoats": [
       {
-        "ID": 2,
-        "Type": "bananaboat",
-        "Length": 3342
+        "ID": 1,
+        "Type": "LokeVollvooof",
+        "Length": 40
       }
     ]
   },
