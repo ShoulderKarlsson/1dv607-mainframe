@@ -15,7 +15,14 @@ namespace Workshop_2.controller
             controller.DeleteController dController = new DeleteController();
             controller.EditController eController = new EditController();
             controller.ListController lController = new ListController();
+            controller.AddBoatController abController = new AddBoatController();
             bUI.WelcomeMessage();
+
+            ///
+            /// Console.Clear() inside each view
+            /// and not in the controller 
+            /// 
+
             do
             {
                 switch (bUI.GetUserInput())
@@ -38,6 +45,8 @@ namespace Workshop_2.controller
                         break;
                     case ConsoleKey.B:
                         Console.Clear();
+                        abController.CollectInformation();
+                        break;
 
                 }
 

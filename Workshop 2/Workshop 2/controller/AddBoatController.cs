@@ -9,5 +9,14 @@ namespace Workshop_2.controller
     class AddBoatController
     {
 
+
+        public AddBoatController()
+        {
+
+        }
+        public void CollectInformation()
+        {
+            
+        }
     }
 }

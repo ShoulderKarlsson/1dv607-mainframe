@@ -40,7 +40,5 @@ namespace Workshop_2.controller
         {
             _memberOps.AddUser(member);
         }
-
-
     }
 }
