@@ -100,6 +100,17 @@ namespace Workshop_2.model
             return found;
         }
 
+        private int GenerateBoatID(model.Member m)
+        {
+            return m.MemberBoats.Count == 0 ? 1 : m.MemberBoats.OrderBy(b => b.ID).Last().ID + 1;
+        }
 
+        public void SaveBoat(Boat newBoat, string personalNumber)
+        {
+            model.Member m = GetUserInfo(personalNumber);
+            newBoat.ID = GenerateBoatID(m);
+            m.MemberBoats.Add(newBoat);
+            UpdateUser(m);
+        }
     }
 }

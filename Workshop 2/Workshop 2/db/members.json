@@ -3,7 +3,18 @@
     "Name": "fasjkdfhkasjldhf",
     "PersonalNumber": "1231231234",
     "Id": 3,
-    "MemberBoats": []
+    "MemberBoats": [
+      {
+        "ID": 1,
+        "Type": "Kajjak",
+        "Length": 7
+      },
+      {
+        "ID": 2,
+        "Type": "Svanboet",
+        "Length": 6
+      }
+    ]
   },
   {
     "Name": "Ricky",
@@ -23,10 +34,12 @@
     "Id": 8,
     "MemberBoats": [
       {
+        "ID": 0,
         "Type": "Kajak",
         "Length": 42
       },
       {
+        "ID": 0,
         "Type": "Loke",
         "Length": 2
       }
@@ -38,10 +51,12 @@
     "Id": 9,
     "MemberBoats": [
       {
+        "ID": 0,
         "Type": "Kajak",
         "Length": 42
       },
       {
+        "ID": 0,
         "Type": "Loke",
         "Length": 2
       }

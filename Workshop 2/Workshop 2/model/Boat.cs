@@ -6,6 +6,7 @@ namespace Workshop_2.model
     {
         private string _type;
         private int _length;
+        public int ID { get; set; }
 
         public Boat(string type, int length)
         {

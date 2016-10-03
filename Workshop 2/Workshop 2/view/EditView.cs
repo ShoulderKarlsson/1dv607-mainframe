@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Workshop_2.model;
 
 namespace Workshop_2.view
@@ -27,7 +28,6 @@ namespace Workshop_2.view
                 try
                 {
                     personalNumber = Console.ReadLine();
-
                     CheckLength(personalNumber);
                     CheckAlreadyExists(personalNumber);
 
