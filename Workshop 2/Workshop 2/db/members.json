@@ -6,8 +6,8 @@
     "MemberBoats": [
       {
         "ID": 2,
-        "Type": "Svanboet",
-        "Length": 6
+        "Type": "bananaboat",
+        "Length": 3342
       }
     ]
   },
@@ -29,12 +29,12 @@
     "Id": 8,
     "MemberBoats": [
       {
-        "ID": 0,
+        "ID": 1,
         "Type": "Kajak",
         "Length": 42
       },
       {
-        "ID": 0,
+        "ID": 2,
         "Type": "Loke",
         "Length": 2
       }
@@ -46,12 +46,12 @@
     "Id": 9,
     "MemberBoats": [
       {
-        "ID": 0,
+        "ID": 1,
         "Type": "Kajak",
         "Length": 42
       },
       {
-        "ID": 0,
+        "ID": 2,
         "Type": "Loke",
         "Length": 2
       }

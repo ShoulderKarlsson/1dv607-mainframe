@@ -4,8 +4,6 @@ namespace Workshop_2.model
 {
     public class Boat
     {
-        private string _type;
-        private int _length;
         public int ID { get; set; }
 
         public Boat(string type, int length)
@@ -14,17 +12,9 @@ namespace Workshop_2.model
             Length = length;
         }
 
-        public string Type
-        {
-            get { return _type; }
-            private set { _type = value; }
-        }
+        public string Type { get; set; }
 
-        public int Length
-        {
-            get { return _length; }
-            private set { _length = value; }
-        }
+        public int Length { get; set; }
 
         public override string ToString()
         {

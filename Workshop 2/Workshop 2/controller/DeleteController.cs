@@ -24,8 +24,6 @@ namespace Workshop_2.controller
         public void CollectInformation()
         {
             _dView.Render();
-
-            //string personalNumber = _dView.GetUserPersonalNumber();
             string personalNumber = GetPersonalNumber();
             _memberOps.RemoveUser(personalNumber);
         }

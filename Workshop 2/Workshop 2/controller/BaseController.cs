@@ -46,7 +46,6 @@ namespace Workshop_2.controller
                         Console.Clear();
                         dController.DeleteBoat();
                         break;
-
                 }
 
                 Init();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Configuration;
 using System.Text;
@@ -120,6 +121,32 @@ namespace Workshop_2.model
                 if (m.MemberBoats[i].ID == ID)
                 {
                     m.MemberBoats.Remove(m.MemberBoats[i]);
+                }
+            }
+
+            UpdateUser(m);
+        }
+
+        public void EditBoatType(Member m, int ID, string type)
+        {
+            for (int i = 0; i < m.MemberBoats.Count; i++)
+            {
+                if (m.MemberBoats[i].ID == ID)
+                {
+                    m.MemberBoats[i].Type = type;
+                }
+            }
+
+            UpdateUser(m);
+        }
+
+        public void EditBoatLength(Member m, int ID, int length)
+        {
+            for (int i = 0; i < m.MemberBoats.Count; i++)
+            {
+                if (m.MemberBoats[i].ID == ID)
+                {
+                    m.MemberBoats[i].Length = length;
                 }
             }
 

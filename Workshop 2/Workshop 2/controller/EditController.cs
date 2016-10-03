@@ -49,7 +49,8 @@ namespace Workshop_2.controller
                     UpdatePersonalNumber(pNumb);
                     break;
                 case "3":
-                    _eView.EditBoat();
+                    _eView.PresentBoats(_memberInfo);
+                    UpdateBoat();
                     break;
             }
         }
@@ -63,6 +64,25 @@ namespace Workshop_2.controller
         {
             _memberInfo.Name = name;
             _memberOperations.UpdateUser(_memberInfo);
+        }
+
+        private void UpdateBoat()
+        {
+            int boatID = _eView.ChooseBoat();
+            int option = _eView.BoatEditOption();
+            
+            if (option == 1)
+            {
+                string type = _eView.EditType();
+                _memberOperations.EditBoatType(_memberInfo, boatID, type);
+
+            }
+            else
+            {
+                int length = _eView.EditLength();
+                _memberOperations.EditBoatLength(_memberInfo, boatID, length);
+            }
+
         }
     }
 }

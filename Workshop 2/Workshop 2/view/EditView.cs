@@ -88,6 +88,33 @@ namespace Workshop_2.view
             Console.Write("New name:");
             return Console.ReadLine();
         }
+
+        public string EditType()
+        {
+            Console.Write("New boat type:");
+            return Console.ReadLine();
+        }
+
+        public int EditLength()
+        {
+            Console.Write("New boat length:");
+            return int.Parse(Console.ReadLine());
+        }
+
+        public int ChooseBoat()
+        {
+            Console.Write("Select boat ID:");
+            return int.Parse(Console.ReadLine());
+        }
+
+        public int BoatEditOption()
+        {
+            Console.WriteLine("Select option:");
+            Console.WriteLine("1. Type");
+            Console.WriteLine("2. Length");
+            return int.Parse(Console.ReadLine());
+        }
+
         public string EditNumber()
         {
             string newPersonalNumber = "";
@@ -111,9 +138,13 @@ namespace Workshop_2.view
 
             return newPersonalNumber;
         }
-        public void EditBoat()
+        public void PresentBoats(Member member)
         {
-            Console.WriteLine("Boat");
+            Console.WriteLine("Select ID of boat to edit");
+            foreach (Boat boat in member.MemberBoats)
+            {
+                Console.WriteLine($"ID: {boat.ID}: {boat}");
+            }
         }
 
         public void PresentMemberInfo(Member memberInfo)
