@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
+using Workshop_2.model;
 
 namespace Workshop_2.view
 {
-    class ListView
+    class ListView : BaseView
     {
+
+        public ListView(MemberOperations mOps) : base(mOps) { }
+
         public string GetListChoice()
         {
 
@@ -27,7 +31,7 @@ namespace Workshop_2.view
                     int number;
                     bool isNumeric = int.TryParse(choice, out number);
 
-                    if (!isNumeric || number > 2 || number <= 0)
+                    if (!isNumeric || number > 3 || number <= 0)
                     {
                         throw new Exception("Invalid Choice.");
                     }
@@ -57,5 +61,17 @@ namespace Workshop_2.view
             }
         }
 
+        protected override void CheckAlreadyExists(string personalNumber)
+        {
+            if (!_memberOps.IsPersonalNumberTaken(personalNumber))
+            {
+                throw new Exception("That user does not exist.");
+            }
+        }
+
+        public void DisplaySingleMember(Member member)
+        {
+            Console.WriteLine(member);
+        }
     }
 }

@@ -112,5 +112,18 @@ namespace Workshop_2.model
             m.MemberBoats.Add(newBoat);
             UpdateUser(m);
         }
+
+        public void RemoveBoat(Member m, int ID)
+        {
+            for (int i = 0; i < m.MemberBoats.Count; i++)
+            {
+                if (m.MemberBoats[i].ID == ID)
+                {
+                    m.MemberBoats.Remove(m.MemberBoats[i]);
+                }
+            }
+
+            UpdateUser(m);
+        }
     }
 }

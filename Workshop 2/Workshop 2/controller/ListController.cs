@@ -12,12 +12,16 @@ namespace Workshop_2.controller
     {
 
         private readonly model.Database _DAL;
+        private readonly model.MemberOperations _memberOps;
+        private readonly model.MemberCatalog _memberCat;
         private readonly view.ListView _listView;
 
         public ListController()
         {
             _DAL = new Database();
-            _listView = new view.ListView();
+            model.MemberCatalog mOps = new MemberCatalog(_DAL);
+            _memberOps = new MemberOperations(mOps, _DAL);
+            _listView = new view.ListView(_memberOps);
         }
 
         public void CollectInformation()
@@ -37,10 +41,16 @@ namespace Workshop_2.controller
                     _listView.DisplayVerbose(users);
                     break;
                 case "3":
-                    _listView.DisplayVerbose(users);
+                    DisplaySingleMember(users);
                     break;
             }
         }
 
+        private void DisplaySingleMember(List<Member> users)
+        {
+            string personalNumber = _listView.GetUserPersonalNumber();
+            model.Member m = _memberOps.GetUserInfo(personalNumber);
+            _listView.DisplaySingleMember(m);
+        }
     }
 }

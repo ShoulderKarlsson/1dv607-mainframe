@@ -23,5 +23,19 @@ namespace Workshop_2.view
                 throw new Exception("That user does not exist.");
             }
         }
+
+        public void PresentBoats(Member member)
+        {
+            Console.WriteLine("Select ID of boat to remove");
+            foreach (Boat boat in member.MemberBoats)
+            {
+                Console.WriteLine($"ID: {boat.ID}: {boat}");
+            }
+        }
+
+        public int GetBoatID()
+        {
+            return int.Parse(Console.ReadLine());
+        }
     }
 }
