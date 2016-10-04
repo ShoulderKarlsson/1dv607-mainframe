@@ -14,6 +14,7 @@ namespace Workshop_2.view
         
         public void Render()
         {
+
             Console.WriteLine("Add information! ");
         }
 
@@ -22,7 +23,7 @@ namespace Workshop_2.view
             Console.WriteLine("Enter personal number for desired user to add boat.");
         }
 
-        /*
+
         public string GetUsername()
         {   
 
@@ -46,22 +47,15 @@ namespace Workshop_2.view
 
             return name;
         }
-        */
 
-        public MemberName GetName()
+        private void ValidateLength(string name)
         {
-            do
+            if (name.Length < 2)
             {
-                Console.Write("Name: ");
-                try
-                {
-                    return new MemberName(Console.ReadLine());
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error.Message);
-                }
-            } while (true);    
+                throw new Exception("Name is too short!");
+            }
         }
+
+
     }
 }
