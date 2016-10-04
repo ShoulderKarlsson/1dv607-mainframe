@@ -72,6 +72,7 @@
     <Compile Include="model\Boat.cs" />
     <Compile Include="model\BoatLength.cs" />
     <Compile Include="model\BoatType.cs" />
+    <Compile Include="model\BoatTypes.cs" />
     <Compile Include="model\Database.cs" />
     <Compile Include="model\Member.cs" />
     <Compile Include="model\MemberCatalog.cs" />
@@ -95,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram5.cd" />
     <None Include="db\members.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

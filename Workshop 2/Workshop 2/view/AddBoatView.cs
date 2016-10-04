@@ -37,15 +37,30 @@ namespace Workshop_2.view
             } while (true);
         }
 
-        public BoatType GetBoatType()
+        public string GetBoatType()
         {
+
+            for (int i = 0; i < Enum.GetNames(typeof (BoatTypes)).Length; i++)
+            {
+                Console.WriteLine($"{i}: {BoatTypes.GetName(typeof(BoatTypes), i)}");      
+            }
+
             do
             {
-                Console.Write("Boat Type: ");
-
+                Console.Write("Choose boat type: ");
                 try
                 {
-                    return new BoatType(Console.ReadLine());
+                    int choice;
+                    string value = Console.ReadLine();
+                    if (int.TryParse(value, out choice))
+                    {
+                        if (choice > Enum.GetNames(typeof (BoatTypes)).Length - 1 || choice < 0)
+                        {
+                            throw new Exception("That is not a valid choice");
+                        }
+                    }
+
+                    return BoatTypes.GetName(typeof (BoatTypes), choice);
                 }
                 catch (Exception error)
                 {

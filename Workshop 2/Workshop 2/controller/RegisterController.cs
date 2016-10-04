@@ -12,50 +12,31 @@ namespace Workshop_2.controller
 {
     class RegisterController
     {
-        private readonly model.MemberOperations _memberOps;
-        private readonly model.MemberCatalog _memberCat;
+        private readonly model.MemberOperations _memberOperations;
+        private readonly model.MemberCatalog _memberCatalog;
         private readonly view.RegisterView _rView;
 
         public RegisterController()
         {
             Database db = new Database();
-            _memberCat = new MemberCatalog(db);
-            _memberOps = new MemberOperations(_memberCat, db);
-            _rView = new RegisterView(_memberOps);
+            _memberCatalog = new MemberCatalog(db);
+            _memberOperations = new MemberOperations(_memberCatalog, db);
+            _rView = new RegisterView(_memberOperations);
         }
         
         public void CollectInformation()
         {
             _rView.Render();
-
-            //MemberPersonalNumber personalNumber = GetPersonalNumber();
-
-
-
-
             MemberName mN = _rView.GetName();
             string personalNumber = _rView.GetUserPersonalNumber();
-            int memberId = _memberOps.GenerateID();
+            int memberId = _memberOperations.GenerateID();
             model.Member newMember = new model.Member(mN.Name, personalNumber, memberId);
-            //model.Member newMember = new model.Member(mN.Name, personalNumber.PersonalNumber, memberId);
             SaveMember(newMember);
         }
 
         private void SaveMember(Member member)
         {
-            _memberOps.AddUser(member);
+            _memberOperations.AddUser(member);
         }
-
-        /*private MemberPersonalNumber GetPersonalNumber()
-        {
-            MemberPersonalNumber personalNumber = _rView.GetPersonalNumber();
-
-            if (_rView.CheckAlreadyExists(personalNumber.PersonalNumber))
-            {
-                GetPersonalNumber();
-            }
-
-            return personalNumber;
-        }*/
     }
 }

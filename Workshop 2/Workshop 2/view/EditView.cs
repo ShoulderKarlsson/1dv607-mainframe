@@ -89,18 +89,6 @@ namespace Workshop_2.view
             return Console.ReadLine();
         }
 
-        public string EditType()
-        {
-            Console.Write("New boat type:");
-            return Console.ReadLine();
-        }
-
-        public int EditLength()
-        {
-            Console.Write("New boat length:");
-            return int.Parse(Console.ReadLine());
-        }
-
         public int ChooseBoat()
         {
             Console.Write("Select boat ID:");

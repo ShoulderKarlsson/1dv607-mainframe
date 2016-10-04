@@ -1,26 +1,24 @@
 [
   {
-    "Name": "Serious User",
+    "Name": "123123123",
     "PersonalNumber": "1231231231",
     "Id": 1,
     "MemberBoats": [
       {
         "ID": 1,
-        "Type": "barkboat",
-        "Length": 12
+        "Type": "Sailboat",
+        "Length": 50
+      },
+      {
+        "ID": 2,
+        "Type": "Sailboat",
+        "Length": 99
+      },
+      {
+        "ID": 3,
+        "Type": "Canoe",
+        "Length": 45
       }
     ]
-  },
-  {
-    "Name": "Refactor_USERKINGE_SLARRE",
-    "PersonalNumber": "1231231232",
-    "Id": 2,
-    "MemberBoats": []
-  },
-  {
-    "Name": "Kingen",
-    "PersonalNumber": "1231231234",
-    "Id": 3,
-    "MemberBoats": []
   }
 ]

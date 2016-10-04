@@ -10,31 +10,31 @@ namespace Workshop_2.controller
 {
     class DeleteController
     {
-        private readonly model.MemberOperations _memberOps;
+        private readonly model.MemberOperations _memberOperations;
         private readonly view.DeleteView _dView;
 
         public DeleteController()
         {
             model.Database _DAL = new Database();
             model.MemberCatalog _memCat = new MemberCatalog(_DAL);
-            _memberOps = new model.MemberOperations(_memCat, _DAL);
-            _dView = new DeleteView(_memberOps);
+            _memberOperations = new model.MemberOperations(_memCat, _DAL);
+            _dView = new DeleteView(_memberOperations);
         }
 
         public void CollectInformation()
         {
             _dView.Render();
             string personalNumber = GetPersonalNumber();
-            _memberOps.RemoveUser(personalNumber);
+            _memberOperations.RemoveUser(personalNumber);
         }
 
         public void DeleteBoat()
         {
             string personalNumber = GetPersonalNumber();
-            model.Member m = _memberOps.GetUserInfo(personalNumber);
+            model.Member m = _memberOperations.GetUserInfo(personalNumber);
             _dView.PresentBoats(m);
             int ID = _dView.GetBoatID();
-            _memberOps.RemoveBoat(m, ID);
+            _memberOperations.RemoveBoat(m, ID);
         }
 
         private string GetPersonalNumber() => _dView.GetUserPersonalNumber();

@@ -23,39 +23,20 @@ namespace Workshop_2.view
             Console.WriteLine("Enter personal number for desired user to add boat.");
         }
 
-
-        public string GetUsername()
-        {   
-
-            string name = "";
-            bool shouldLoop = true;
-
+        public MemberName GetName()
+        {
             do
             {
                 Console.Write("Name: ");
                 try
                 {
-                    name = Console.ReadLine();
-                    ValidateLength(name);
-                    shouldLoop = false;
+                    return new MemberName(Console.ReadLine());
                 }
                 catch (Exception error)
                 {
                     Console.WriteLine(error.Message);
                 }
-            } while (shouldLoop);
-
-            return name;
+            } while (true);
         }
-
-        private void ValidateLength(string name)
-        {
-            if (name.Length < 2)
-            {
-                throw new Exception("Name is too short!");
-            }
-        }
-
-
     }
 }

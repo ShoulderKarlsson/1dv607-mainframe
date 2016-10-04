@@ -18,24 +18,6 @@ namespace Workshop_2.view
             _memberOps = mOps;
         }
 
-        /*
-        public virtual MemberPersonalNumber GetPersonalNumber()
-        {
-            do
-            {
-                try
-                {
-                    return new MemberPersonalNumber(Console.ReadLine());
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error.Message);
-                }
-            } while (true);
-        }
-        */
-
-
         public virtual string GetUserPersonalNumber()
         {
             string personalNumber = "";
@@ -76,13 +58,6 @@ namespace Workshop_2.view
                 throw new Exception("That personal number is already registered, try again.");
             }
         }
-
-        //public virtual bool CheckAlreadyExists(string personalNumber)
-        //{
-        //    return _memberOps.IsPersonalNumberTaken(personalNumber);
-        //}
-
-
         protected void CheckIfLetters(string personalNumber)
         {
             foreach (char letter in personalNumber)
@@ -92,6 +67,53 @@ namespace Workshop_2.view
                     throw new Exception("Can only be numbers in personal number.");
                 }
             }
+        }
+
+        public string GetBoatType()
+        {
+            for (int i = 0; i < Enum.GetNames(typeof(BoatTypes)).Length; i++)
+            {
+                Console.WriteLine($"{i}: {BoatTypes.GetName(typeof(BoatTypes), i)}");
+            }
+
+            do
+            {
+                Console.Write("Choose boat type: ");
+                try
+                {
+                    int choice;
+                    string value = Console.ReadLine();
+                    if (int.TryParse(value, out choice))
+                    {
+                        if (choice > Enum.GetNames(typeof(BoatTypes)).Length - 1 || choice < 0)
+                        {
+                            throw new Exception("That is not a valid choice");
+                        }
+                    }
+
+                    return BoatTypes.GetName(typeof(BoatTypes), choice);
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+            } while (true);
+        }
+        public BoatLength GetBoatLength()
+        {
+            do
+            {
+                Console.Write("Boat Length: ");
+
+                try
+                {
+                    return new BoatLength(Console.ReadLine());
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+            } while (true);
         }
     }
 }

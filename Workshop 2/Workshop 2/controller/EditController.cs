@@ -73,14 +73,15 @@ namespace Workshop_2.controller
             
             if (option == 1)
             {
-                string type = _eView.EditType();
+                string type = _eView.GetBoatType();
                 _memberOperations.EditBoatType(_memberInfo, boatID, type);
 
             }
             else
             {
-                int length = _eView.EditLength();
-                _memberOperations.EditBoatLength(_memberInfo, boatID, length);
+                BoatLength bl = _eView.GetBoatLength();
+                // Will be int, validating in BoatLength
+                _memberOperations.EditBoatLength(_memberInfo, boatID, int.Parse(bl.Length));
             }
 
         }

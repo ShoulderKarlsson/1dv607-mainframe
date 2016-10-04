@@ -8,14 +8,20 @@ namespace Workshop_2.controller
 {
     class BaseController
     {
+        private controller.RegisterController _rController;
+        private controller.DeleteController _dController;
+        private controller.EditController _eController;
+        private controller.ListController _lController;
+        private controller.AddBoatController _abController;
+
         public void Init()
         {
             view.BaseUI bUI = new view.BaseUI();
-            controller.RegisterController rController = new RegisterController();
-            controller.DeleteController dController = new DeleteController();
-            controller.EditController eController = new EditController();
-            controller.ListController lController = new ListController();
-            controller.AddBoatController abController = new AddBoatController();
+            _rController = new RegisterController();
+            _dController = new DeleteController();
+            _eController = new EditController();
+            _lController = new ListController();
+            _abController = new AddBoatController();
             bUI.WelcomeMessage();
 
             do
@@ -24,27 +30,27 @@ namespace Workshop_2.controller
                 {
                     case ConsoleKey.R:
                         Console.Clear();
-                        rController.CollectInformation();
+                        _rController.CollectInformation();
                         break;
                     case ConsoleKey.D:
                         Console.Clear();
-                        dController.CollectInformation();
+                        _dController.CollectInformation();
                         break;
                     case ConsoleKey.E:
                         Console.Clear();
-                        eController.CollectInformation();
+                        _eController.CollectInformation();
                         break;
                     case ConsoleKey.L:
                         Console.Clear();
-                        lController.CollectInformation();
+                        _lController.CollectInformation();
                         break;
                     case ConsoleKey.B:
                         Console.Clear();
-                        abController.CollectInformation();
+                        _abController.CollectInformation();
                         break;
                     case ConsoleKey.C:
                         Console.Clear();
-                        dController.DeleteBoat();
+                        _dController.DeleteBoat();
                         break;
                 }
 
