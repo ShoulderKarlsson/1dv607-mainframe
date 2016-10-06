@@ -11,7 +11,31 @@ namespace Workshop_2.view
     class RegisterView : BaseView
     {
         public RegisterView(model.MemberOperations mOps) : base(mOps) {}
-        
+
+        internal MemberOperations MemberOperations
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public MemberName MemberName
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public void Render()
         {
 

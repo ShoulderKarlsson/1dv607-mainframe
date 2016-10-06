@@ -10,18 +10,18 @@ using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
-    class EditController
+    class EditController : BaseController
     {
-        private readonly model.Database _DAL;
-        private readonly model.MemberOperations _memberOperations;
+        //private readonly model.Database _DAL;
+        //private readonly model.MemberOperations _memberOperations;
         private readonly view.EditView _eView;
         private model.Member _memberInfo;
 
         public EditController()
         {
-            _DAL = new model.Database();
-            model.MemberCatalog mOps = new MemberCatalog(_DAL);
-            _memberOperations = new MemberOperations(mOps, _DAL);
+            //_DAL = new model.Database();
+            //model.MemberCatalog mOps = new MemberCatalog(_DAL);
+            //_memberOperations = new MemberOperations(mOps, _DAL);
             _eView = new view.EditView(_memberOperations);
         }
 

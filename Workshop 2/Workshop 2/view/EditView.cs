@@ -115,7 +115,13 @@ namespace Workshop_2.view
                     newPersonalNumber = Console.ReadLine();
                     CheckIfLetters(newPersonalNumber);
                     CheckLength(newPersonalNumber);
-                    CheckAlreadyExists(newPersonalNumber);
+
+                    if (_memberOps.IsPersonalNumberTaken(newPersonalNumber))
+                    {
+                        throw new Exception("That SSN is taken.");    
+                    }
+                    
+                    //CheckAlreadyExists(newPersonalNumber);
                     loop = false;
                 }
                 catch (Exception error)

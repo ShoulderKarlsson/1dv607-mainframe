@@ -13,6 +13,30 @@ namespace Workshop_2.view
 
         public ListView(MemberOperations mOps) : base(mOps) { }
 
+        internal MemberOperations MemberOperations
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Member Member
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public string GetListChoice()
         {
 

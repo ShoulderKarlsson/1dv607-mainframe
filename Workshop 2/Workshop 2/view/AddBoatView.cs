@@ -13,6 +13,30 @@ namespace Workshop_2.view
     {
         public AddBoatView(model.MemberOperations mOps) : base(mOps) { }
 
+        internal MemberOperations MemberOperations
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        internal BoatLength BoatLength
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         protected override void CheckAlreadyExists(string personalNumber)
         {
             if (!_memberOps.IsPersonalNumberTaken(personalNumber))
@@ -40,9 +64,9 @@ namespace Workshop_2.view
         public string GetBoatType()
         {
 
-            for (int i = 0; i < Enum.GetNames(typeof (BoatTypes)).Length; i++)
+            for (int i = 0; i < Enum.GetNames(typeof (Sal)).Length; i++)
             {
-                Console.WriteLine($"{i}: {BoatTypes.GetName(typeof(BoatTypes), i)}");      
+                Console.WriteLine($"{i}: {Sal.GetName(typeof(Sal), i)}");      
             }
 
             do
@@ -54,13 +78,13 @@ namespace Workshop_2.view
                     string value = Console.ReadLine();
                     if (int.TryParse(value, out choice))
                     {
-                        if (choice > Enum.GetNames(typeof (BoatTypes)).Length - 1 || choice < 0)
+                        if (choice > Enum.GetNames(typeof (Sal)).Length - 1 || choice < 0)
                         {
                             throw new Exception("That is not a valid choice");
                         }
                     }
 
-                    return BoatTypes.GetName(typeof (BoatTypes), choice);
+                    return Sal.GetName(typeof (Sal), choice);
                 }
                 catch (Exception error)
                 {

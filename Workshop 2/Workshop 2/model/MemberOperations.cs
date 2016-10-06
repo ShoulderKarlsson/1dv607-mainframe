@@ -18,6 +18,42 @@ namespace Workshop_2.model
             _storedMembers = mCat._storedMembers;
         }
 
+        public Member Member
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        internal MemberCatalog MemberCatalog
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        internal Database Database
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public int GenerateID() => _storedMembers.Count == 0 ? 1 : _storedMembers.OrderBy(m => m.Id).Last().Id + 1;
 
         public void UpdateUser(model.Member memberCredentials, string newPn)

@@ -14,7 +14,7 @@ namespace Workshop_2
     {
         static void Main(string[] args)
         {
-            controller.BaseController bc = new controller.BaseController();
+            controller.MasterController bc = new controller.MasterController();
             bc.Init();
         }
     }

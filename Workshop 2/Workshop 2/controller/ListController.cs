@@ -8,19 +8,19 @@ using Workshop_2.model;
 
 namespace Workshop_2.controller
 {
-    class ListController
+    class ListController : BaseController
     {
 
-        private readonly model.Database _DAL;
-        private readonly model.MemberOperations _memberOperations;
-        private readonly model.MemberCatalog _memberCatalog;
+        //private readonly model.Database _DAL;
+        //private readonly model.MemberOperations _memberOperations;
+        //private readonly model.MemberCatalog _memberCatalog;
         private readonly view.ListView _listView;
 
         public ListController()
         {
-            _DAL = new Database();
-            model.MemberCatalog mOps = new MemberCatalog(_DAL);
-            _memberOperations = new MemberOperations(mOps, _DAL);
+            //_DAL = new Database();
+            //model.MemberCatalog mOps = new MemberCatalog(_DAL);
+            //_memberOperations = new MemberOperations(mOps, _DAL);
             _listView = new view.ListView(_memberOperations);
         }
 
