@@ -14,7 +14,6 @@ namespace Workshop_2.model
         private string filePath = @"db\members.json";
         private List<Member> _storedMembers;
 
-
         public Database()
         {
             _storedMembers = GetMembers();
