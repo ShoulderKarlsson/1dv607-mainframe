@@ -17,6 +17,7 @@ namespace Workshop_2.controller
         public void Init()
         {
             view.BaseUI bUI = new view.BaseUI();
+
             _rController = new RegisterController();
             _dController = new DeleteController();
             _eController = new EditController();
@@ -29,27 +30,21 @@ namespace Workshop_2.controller
                 switch (bUI.GetUserInput())
                 {
                     case ConsoleKey.R:
-                        Console.Clear();
                         _rController.CollectInformation();
                         break;
                     case ConsoleKey.D:
-                        Console.Clear();
                         _dController.CollectInformation();
                         break;
                     case ConsoleKey.E:
-                        Console.Clear();
                         _eController.CollectInformation();
                         break;
                     case ConsoleKey.L:
-                        Console.Clear();
                         _lController.CollectInformation();
                         break;
                     case ConsoleKey.B:
-                        Console.Clear();
                         _abController.CollectInformation();
                         break;
                     case ConsoleKey.C:
-                        Console.Clear();
                         _dController.DeleteBoat();
                         break;
                 }

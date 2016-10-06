@@ -33,7 +33,6 @@ namespace Workshop_2.model
 
         public string VerboseToString()
         {
-            
             string boats = CollectBoats();
             return $"\nID: {Id} \nName: {Name} \nPersonal Number: {PersonalNumber} \nBoats: {boats}";
         }

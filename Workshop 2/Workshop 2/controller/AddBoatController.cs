@@ -8,19 +8,13 @@ using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
-    class AddBoatController
+    class AddBoatController : BaseController
     {
-
-        private readonly model.MemberOperations _memberOps;
-        private readonly model.MemberCatalog _memberCat;
         private readonly view.AddBoatView _abView;
 
         public AddBoatController()
         {
-            model.Database db = new Database();
-            _memberCat = new MemberCatalog(db);
-            _memberOps = new MemberOperations(_memberCat, db);
-            _abView = new AddBoatView(_memberOps);
+            _abView = new AddBoatView(_memberOperations);
         }
         public void CollectInformation()
         {
@@ -30,7 +24,7 @@ namespace Workshop_2.controller
 
             // Will always be int, validating when setting value.
             Boat newBoat = new Boat(bt, int.Parse(bl.Length));
-            _memberOps.SaveBoat(newBoat, personalNumber);
+            _memberOperations.SaveBoat(newBoat, personalNumber);
         }
 
     }

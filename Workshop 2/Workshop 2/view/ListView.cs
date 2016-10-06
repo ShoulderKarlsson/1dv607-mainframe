@@ -13,38 +13,15 @@ namespace Workshop_2.view
 
         public ListView(MemberOperations mOps) : base(mOps) { }
 
-        internal MemberOperations MemberOperations
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public Member Member
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
         public string GetListChoice()
         {
-
+            ClearConsole();
             string choice = "";
             bool shouldLoop = true;
             Console.WriteLine("What type of list? \n " +
                               "1. Compact \n " +
-                              "2. Verbose");
+                              "2. Verbose \n " +
+                              "3. Single Member");
             do
             {
                 Console.Write(": ");

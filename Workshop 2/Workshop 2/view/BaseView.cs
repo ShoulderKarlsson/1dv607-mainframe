@@ -18,8 +18,14 @@ namespace Workshop_2.view
             _memberOps = mOps;
         }
 
+        protected virtual void ClearConsole()
+        {
+            Console.Clear();
+        }
+
         public virtual string GetUserPersonalNumber()
         {
+            ClearConsole();
             string personalNumber = "";
             bool shouldLoop = true;
 
@@ -71,9 +77,9 @@ namespace Workshop_2.view
 
         public string GetBoatType()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(Sal)).Length; i++)
+            for (int i = 0; i < Enum.GetNames(typeof(BoatTypes)).Length; i++)
             {
-                Console.WriteLine($"{i}: {Sal.GetName(typeof(Sal), i)}");
+                Console.WriteLine($"{i}: {BoatTypes.GetName(typeof(BoatTypes), i)}");
             }
 
             do
@@ -85,13 +91,13 @@ namespace Workshop_2.view
                     string value = Console.ReadLine();
                     if (int.TryParse(value, out choice))
                     {
-                        if (choice > Enum.GetNames(typeof(Sal)).Length - 1 || choice < 0)
+                        if (choice > Enum.GetNames(typeof(BoatTypes)).Length - 1 || choice < 0)
                         {
                             throw new Exception("That is not a valid choice");
                         }
                     }
 
-                    return Sal.GetName(typeof(Sal), choice);
+                    return BoatTypes.GetName(typeof(BoatTypes), choice);
                 }
                 catch (Exception error)
                 {
@@ -99,6 +105,7 @@ namespace Workshop_2.view
                 }
             } while (true);
         }
+
         public BoatLength GetBoatLength()
         {
             do

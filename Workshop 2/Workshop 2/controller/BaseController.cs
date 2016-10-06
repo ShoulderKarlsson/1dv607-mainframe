@@ -19,5 +19,5 @@ namespace Workshop_2.controller
             _memberCatalog = new MemberCatalog(_DAL);
             _memberOperations = new MemberOperations(_memberCatalog, _DAL);
         }
-    }
+    } 
 }

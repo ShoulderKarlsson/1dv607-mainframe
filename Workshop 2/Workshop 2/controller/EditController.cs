@@ -12,16 +12,11 @@ namespace Workshop_2.controller
 {
     class EditController : BaseController
     {
-        //private readonly model.Database _DAL;
-        //private readonly model.MemberOperations _memberOperations;
         private readonly view.EditView _eView;
         private model.Member _memberInfo;
 
         public EditController()
         {
-            //_DAL = new model.Database();
-            //model.MemberCatalog mOps = new MemberCatalog(_DAL);
-            //_memberOperations = new MemberOperations(mOps, _DAL);
             _eView = new view.EditView(_memberOperations);
         }
 
@@ -32,12 +27,11 @@ namespace Workshop_2.controller
             _memberInfo = _memberOperations.GetUserInfo(personalNumber);
             _eView.PresentMemberInfo(_memberInfo);
             string choice = _eView.GetUserChoice();
-            MakeChange(choice);
+            UpdateMemberInformation(choice);
         }
 
-        private void MakeChange(string choice)
+        private void UpdateMemberInformation(string choice)
         {
-
             switch (choice)
             {
                 case "1":
@@ -50,7 +44,7 @@ namespace Workshop_2.controller
                     break;
                 case "3":
                     _eView.PresentBoats(_memberInfo);
-                    UpdateBoat();
+                    UpdateBoat(_memberInfo.MemberBoats.Count);
                     break;
             }
         }
@@ -66,24 +60,23 @@ namespace Workshop_2.controller
             _memberOperations.UpdateUser(_memberInfo);
         }
 
-        private void UpdateBoat()
+        private void UpdateBoat(int amountOfBoats)
         {
-            int boatID = _eView.ChooseBoat();
+            int boatID = _eView.ChooseBoat(amountOfBoats);
             int option = _eView.BoatEditOption();
             
             if (option == 1)
             {
                 string type = _eView.GetBoatType();
                 _memberOperations.EditBoatType(_memberInfo, boatID, type);
-
             }
             else
             {
                 BoatLength bl = _eView.GetBoatLength();
-                // Will be int, validating in BoatLength
+
+                // Will always be int, validation in BoatLength
                 _memberOperations.EditBoatLength(_memberInfo, boatID, int.Parse(bl.Length));
             }
-
         }
     }
 }

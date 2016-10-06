@@ -12,15 +12,10 @@ namespace Workshop_2.controller
 {
     class RegisterController : BaseController
     {
-        //private readonly model.MemberOperations _memberOperations;
-        //private readonly model.MemberCatalog _memberCatalog;
         private readonly view.RegisterView _rView;
 
         public RegisterController()
         {
-            //    Database db = new Database();
-            //    _memberCatalog = new MemberCatalog(db);
-            //    _memberOperations = new MemberOperations(_memberCatalog, db);
             _rView = new RegisterView(_memberOperations);
         }
 

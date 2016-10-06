@@ -8,7 +8,7 @@ namespace Workshop_2.model
 {
     class MemberCatalog
     {
-        public List<Member> _storedMembers; 
+        public List<Member> _storedMembers;
 
         public MemberCatalog(Database db)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Workshop_2.model
 {
-    public enum Sal
+    public enum BoatTypes
     {
         Sailboat = 0,
         MotorSailer = 1,
