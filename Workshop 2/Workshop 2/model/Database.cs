@@ -11,7 +11,7 @@ namespace Workshop_2.model
 {
     class Database
     {
-        private string filePath = @"db\members.json";
+        private string filePath = @"..\..\db\members.json";
         private List<Member> _storedMembers;
 
         public Database()
