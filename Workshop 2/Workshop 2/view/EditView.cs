@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Workshop_2.model;
 
 namespace Workshop_2.view
 {
     class EditView : BaseView
     {
-        public EditView(model.MemberOperations mOps) : base(mOps) { }
+        public EditView(MemberOperations mOps) : base(mOps) { }
 
         public void Render()
         {

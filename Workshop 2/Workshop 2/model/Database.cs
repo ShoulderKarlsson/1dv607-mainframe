@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using Newtonsoft.Json;
 
 namespace Workshop_2.model
@@ -25,14 +20,14 @@ namespace Workshop_2.model
             File.WriteAllText(filePath, json);
         }
 
-        private List<model.Member> GetMembers()
+        private List<Member> GetMembers()
         {
             string json;
             using (StreamReader r = new StreamReader(filePath))
             {
                 json = r.ReadToEnd();
             }
-            return JsonConvert.DeserializeObject<List<model.Member>>(json);
+            return JsonConvert.DeserializeObject<List<Member>>(json);
         }
 
         public List<Member> GetMemberList()

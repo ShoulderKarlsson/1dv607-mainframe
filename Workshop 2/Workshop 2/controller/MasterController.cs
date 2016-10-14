@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
     class MasterController
     {
-        private controller.RegisterController _rController;
-        private controller.DeleteController _dController;
-        private controller.EditController _eController;
-        private controller.ListController _lController;
+        private RegisterController _rController;
+        private DeleteController _dController;
+        private EditController _eController;
+        private ListController _lController;
 
         public void Init()
         {
-            view.BaseUI bUI = new view.BaseUI();
+            BaseUI bUI = new view.BaseUI();
 
             _rController = new RegisterController();
             _dController = new DeleteController();

@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Serialization;
 using Workshop_2.model;
 
 namespace Workshop_2.view
 {
     abstract class BaseView
     {
-        protected model.MemberOperations _memberOps;
+        protected MemberOperations _memberOps;
 
-        protected BaseView(model.MemberOperations mOps)
+        protected BaseView(MemberOperations mOps)
         {
             _memberOps = mOps;
         }

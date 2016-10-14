@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Win32;
 using Workshop_2.model;
 
 namespace Workshop_2.view
@@ -47,17 +43,17 @@ namespace Workshop_2.view
             return choice;
         }
 
-        public void DisplayCompact(List<model.Member> users)
+        public void DisplayCompact(List<Member> users)
         {
-            foreach (model.Member user in users)
+            foreach (Member user in users)
             {
                 Console.WriteLine(user.CompactToString());
             }
         }
 
-        public void DisplayVerbose(List<model.Member> users)
+        public void DisplayVerbose(List<Member> users)
         {
-            foreach (model.Member user in users)
+            foreach (Member user in users)
             {
                 Console.WriteLine(user.VerboseToString());
             }

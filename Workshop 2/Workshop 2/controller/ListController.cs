@@ -1,21 +1,17 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Workshop_2.model;
+using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
     class ListController : BaseController
     {
 
-        private readonly view.ListView _listView;
+        private readonly ListView _listView;
 
         public ListController()
         {
-            _listView = new view.ListView(_memberOperations);
+            _listView = new ListView(_memberOperations);
         }
 
         public void CollectInformation()
@@ -43,7 +39,7 @@ namespace Workshop_2.controller
         private void DisplaySingleMember()
         {
             string personalNumber = _listView.GetUserPersonalNumber();
-            model.Member m = _memberOperations.GetUserInfo(personalNumber);
+            Member m = _memberOperations.GetUserInfo(personalNumber);
             _listView.DisplaySingleMember(m);
         }
     }

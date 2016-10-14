@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Workshop_2.model;
-using Workshop_2.view;
+﻿using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
     class DeleteController : BaseController
     {
-        private readonly view.DeleteView _dView;
+        private readonly DeleteView _dView;
 
         public DeleteController()
         {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Workshop_2.model;
+﻿using Workshop_2.model;
 using Workshop_2.view;
 
 
@@ -12,7 +6,7 @@ namespace Workshop_2.controller
 {
     class RegisterController : BaseController
     {
-        private readonly view.RegisterView _rView;
+        private readonly RegisterView _rView;
 
         public RegisterController()
         {
@@ -26,7 +20,7 @@ namespace Workshop_2.controller
             string personalNumber = _rView.GetUserPersonalNumber(true);
             int memberId = _memberOperations.GenerateID();
 
-            model.Member newMember = new model.Member(mN, personalNumber, memberId);
+            Member newMember = new Member(mN, personalNumber, memberId);
             SaveMember(newMember);
         }
 

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Configuration;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Workshop_2.model
 {
     class MemberOperations
     {
         private List<Member> _storedMembers;
-        private readonly model.Database _DAL;
-        public MemberOperations(model.MemberCatalog mCat, Database db)
+        private readonly Database _DAL;
+        public MemberOperations(MemberCatalog mCat, Database db)
         {
             _DAL = db;
             _storedMembers = mCat._storedMembers;
@@ -20,7 +15,7 @@ namespace Workshop_2.model
 
         public int GenerateID() => _storedMembers.Count == 0 ? 1 : _storedMembers.OrderBy(m => m.Id).Last().Id + 1;
 
-        public void UpdateUser(model.Member memberCredentials, string newPn)
+        public void UpdateUser(Member memberCredentials, string newPn)
         {
             for (int i = 0; i < _storedMembers.Count; i++)
             {
@@ -35,7 +30,7 @@ namespace Workshop_2.model
             _DAL.UpdateDatabase(_storedMembers);
         }
 
-        public void UpdateUser(model.Member memberCredentials)
+        public void UpdateUser(Member memberCredentials)
         {
             for (int i = 0; i < _storedMembers.Count; i++)
             {
@@ -93,11 +88,11 @@ namespace Workshop_2.model
             return found;
         }
 
-        private int GenerateBoatID(model.Member m) => m.MemberBoats.Count == 0 ? 1 : m.MemberBoats.OrderBy(b => b.ID).Last().ID + 1;
+        private int GenerateBoatID(Member m) => m.MemberBoats.Count == 0 ? 1 : m.MemberBoats.OrderBy(b => b.ID).Last().ID + 1;
 
         public void SaveBoat(Boat newBoat, string personalNumber)
         {
-            model.Member m = GetUserInfo(personalNumber);
+            Member m = GetUserInfo(personalNumber);
             newBoat.ID = GenerateBoatID(m);
             m.MemberBoats.Add(newBoat);
             UpdateUser(m);

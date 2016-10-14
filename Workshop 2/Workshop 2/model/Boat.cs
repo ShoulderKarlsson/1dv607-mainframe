@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Workshop_2.model
+﻿namespace Workshop_2.model
 {
     public class Boat
     {

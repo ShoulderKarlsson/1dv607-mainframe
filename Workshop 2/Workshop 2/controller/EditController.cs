@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Workshop_2.model;
+﻿using Workshop_2.model;
 using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
     class EditController : BaseController
     {
-        private readonly view.EditView _eView;
-        private model.Member _memberInfo;
+        private readonly EditView _eView;
+        private Member _memberInfo;
 
         public EditController()
         {
-            _eView = new view.EditView(_memberOperations);
+            _eView = new EditView(_memberOperations);
         }
 
         public void CollectInformation()
