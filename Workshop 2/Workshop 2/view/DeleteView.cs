@@ -14,15 +14,7 @@ namespace Workshop_2.view
         public void Render()
         {
             ClearConsole();
-            Console.WriteLine("Input personal number.");
-        }
-
-        protected override void CheckAlreadyExists(string personalNumber)
-        {
-            if (!_memberOps.IsPersonalNumberTaken(personalNumber))
-            {
-                throw new Exception("That user does not exist.");
-            }
+            Console.WriteLine("Input personal number: ");
         }
 
         public void PresentBoats(Member member)
@@ -36,7 +28,21 @@ namespace Workshop_2.view
 
         public int GetBoatID()
         {
-            return int.Parse(Console.ReadLine());
+            do
+            {
+                try
+                {
+                    Console.Write("ID: ");
+                    string ID = Console.ReadLine();
+                    NumberInputValidation(ID);
+                    return int.Parse(ID);
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.Message);
+                }
+
+            } while (true);
         }
     }
 }

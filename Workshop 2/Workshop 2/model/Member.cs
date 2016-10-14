@@ -17,7 +17,6 @@ namespace Workshop_2.model
             Id = id;
         }
 
-
         public string Name { get; set; }
 
         public string PersonalNumber { get; set; }

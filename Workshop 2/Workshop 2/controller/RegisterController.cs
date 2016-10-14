@@ -22,12 +22,24 @@ namespace Workshop_2.controller
         public void CollectInformation()
         {
             _rView.Render();
-            MemberName mN = _rView.GetName();
-            string personalNumber = _rView.GetUserPersonalNumber();
+            string mN = _rView.GetName();
+            string personalNumber = _rView.GetUserPersonalNumber(true);
             int memberId = _memberOperations.GenerateID();
-            model.Member newMember = new model.Member(mN.Name, personalNumber, memberId);
+
+            model.Member newMember = new model.Member(mN, personalNumber, memberId);
             SaveMember(newMember);
         }
+
+        public void CollectNewBoatInformation()
+        {
+            string personalNumber = _rView.GetUserPersonalNumber();
+            string boatLength = _rView.GetBoatLength();
+            string bt = _rView.GetBoatType();
+
+            Boat newBoat = new Boat(bt, boatLength);
+            _memberOperations.SaveBoat(newBoat, personalNumber);
+        }
+
 
         private void SaveMember(Member member)
         {

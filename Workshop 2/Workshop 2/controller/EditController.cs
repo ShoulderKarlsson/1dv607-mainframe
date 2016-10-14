@@ -39,7 +39,8 @@ namespace Workshop_2.controller
                     UpdateName(newName);
                     break;
                 case "2":
-                    string pNumb = _eView.EditNumber();
+                    //string pNumb = _eView.EditNumber();
+                    string pNumb = _eView.GetUserPersonalNumber(true);
                     UpdatePersonalNumber(pNumb);
                     break;
                 case "3":
@@ -72,10 +73,15 @@ namespace Workshop_2.controller
             }
             else
             {
-                BoatLength bl = _eView.GetBoatLength();
+                //BoatLength bl = _eView.GetBoatLength();
+
+                string boatLength = _eView.GetBoatLength();
+
 
                 // Will always be int, validation in BoatLength
-                _memberOperations.EditBoatLength(_memberInfo, boatID, int.Parse(bl.Length));
+                //_memberOperations.EditBoatLength(_memberInfo, boatID, int.Parse(bl.Length));
+
+                _memberOperations.EditBoatLength(_memberInfo, boatID, boatLength);
             }
         }
     }

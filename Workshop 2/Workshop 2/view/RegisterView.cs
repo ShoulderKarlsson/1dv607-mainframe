@@ -15,7 +15,7 @@ namespace Workshop_2.view
         public void Render()
         {
             ClearConsole();
-            Console.WriteLine("Add information! ");
+            Console.WriteLine("Add information for new member ");
         }
 
         public void RenderBoatOption()
@@ -23,18 +23,20 @@ namespace Workshop_2.view
             Console.WriteLine("Enter personal number for desired user to add boat.");
         }
 
-        public MemberName GetName()
+        public string GetName()
         {
             do
             {
                 Console.Write("Name: ");
                 try
                 {
-                    return new MemberName(Console.ReadLine());
+                    string name = Console.ReadLine();
+                    StringInputValidation(name);
+                    return name;
                 }
-                catch (Exception error)
+                catch (Exception e)
                 {
-                    Console.WriteLine(error.Message);
+                    Console.WriteLine(e.Message);
                 }
             } while (true);
         }

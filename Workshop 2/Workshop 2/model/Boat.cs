@@ -6,7 +6,7 @@ namespace Workshop_2.model
     {
         public int ID { get; set; }
 
-        public Boat(string type, int length)
+        public Boat(string type, string length)
         {
             Type = type;
             Length = length;
@@ -14,7 +14,7 @@ namespace Workshop_2.model
 
         public string Type { get; set; }
 
-        public int Length { get; set; }
+        public string Length { get; set; }
 
         public override string ToString()
         {

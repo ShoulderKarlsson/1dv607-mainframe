@@ -54,19 +54,12 @@ namespace Workshop_2.view
                 Console.WriteLine(user.CompactToString());
             }
         }
+
         public void DisplayVerbose(List<model.Member> users)
         {
             foreach (model.Member user in users)
             {
                 Console.WriteLine(user.VerboseToString());
-            }
-        }
-
-        protected override void CheckAlreadyExists(string personalNumber)
-        {
-            if (!_memberOps.IsPersonalNumberTaken(personalNumber))
-            {
-                throw new Exception("That user does not exist.");
             }
         }
 

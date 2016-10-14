@@ -18,37 +18,6 @@ namespace Workshop_2.view
             ClearConsole();
             Console.WriteLine("Enter personal number for the person to edit: ");
         }
-        public override string GetUserPersonalNumber()
-        {
-            string personalNumber = "";
-            bool shouldLoop = true;
-
-            do
-            {
-                Console.Write("Personal Number: ");
-                try
-                {
-                    personalNumber = Console.ReadLine();
-                    CheckLength(personalNumber);
-                    CheckAlreadyExists(personalNumber);
-
-                    shouldLoop = false;
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error.Message);
-                }
-            } while (shouldLoop);
-            return personalNumber;
-        }
-
-        protected override void CheckAlreadyExists(string personalNumber)
-        {
-            if (!_memberOps.IsPersonalNumberTaken(personalNumber))
-            {
-                throw new Exception("That user does not exist.");
-            }
-        }
 
         public string GetUserChoice()
         {
@@ -57,12 +26,10 @@ namespace Workshop_2.view
                               "2. Personal Number \n " +
                               "3. Boat Information");
 
-            return choiceValidation(3);
+            return DropDownUserChoiceValidation(3);
         }
 
-
-
-        private string choiceValidation(int arg)
+        private string DropDownUserChoiceValidation(int arg)
         {
             bool shouldLoop = true;
             string choice = "";
@@ -101,7 +68,7 @@ namespace Workshop_2.view
             Console.Write("Select boat ID:");
 
             // Will always be int, validting in input method.
-            return int.Parse(choiceValidation(amountOfBoats));
+            return int.Parse(DropDownUserChoiceValidation(amountOfBoats));
         }
 
         public int BoatEditOption()
@@ -111,37 +78,9 @@ namespace Workshop_2.view
             Console.WriteLine("2. Length");
 
             // Will always be int, validating in input method.
-            return int.Parse(choiceValidation(2));
+            return int.Parse(DropDownUserChoiceValidation(2));
         }
 
-        public string EditNumber()
-        {
-            string newPersonalNumber = "";
-            bool loop = true;
-            do
-            {
-                Console.Write("New personal number: ");
-                try
-                {
-                    newPersonalNumber = Console.ReadLine();
-                    CheckIfLetters(newPersonalNumber);
-                    CheckLength(newPersonalNumber);
-
-                    if (_memberOps.IsPersonalNumberTaken(newPersonalNumber))
-                    {
-                        throw new Exception("That personal number is taken.");    
-                    }
-
-                    loop = false;
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error.Message);
-                }
-            } while (loop);
-
-            return newPersonalNumber;
-        }
         public void PresentBoats(Member member)
         {
             Console.WriteLine("Select ID of boat to edit");
@@ -151,9 +90,6 @@ namespace Workshop_2.view
             }
         }
 
-        public void PresentMemberInfo(Member memberInfo)
-        {
-            Console.WriteLine(memberInfo.ToString());
-        }
+        public void PresentMemberInfo(Member memberInfo) => Console.WriteLine(memberInfo.ToString());
     }
 }

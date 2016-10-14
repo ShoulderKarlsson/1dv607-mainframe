@@ -12,7 +12,6 @@ namespace Workshop_2.controller
         private controller.DeleteController _dController;
         private controller.EditController _eController;
         private controller.ListController _lController;
-        private controller.AddBoatController _abController;
 
         public void Init()
         {
@@ -22,7 +21,6 @@ namespace Workshop_2.controller
             _dController = new DeleteController();
             _eController = new EditController();
             _lController = new ListController();
-            _abController = new AddBoatController();
             bUI.WelcomeMessage();
 
             do
@@ -42,7 +40,7 @@ namespace Workshop_2.controller
                         _lController.CollectInformation();
                         break;
                     case ConsoleKey.B:
-                        _abController.CollectInformation();
+                        _rController.CollectNewBoatInformation();
                         break;
                     case ConsoleKey.C:
                         _dController.DeleteBoat();

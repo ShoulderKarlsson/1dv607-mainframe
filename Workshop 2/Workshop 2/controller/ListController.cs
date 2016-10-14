@@ -35,12 +35,12 @@ namespace Workshop_2.controller
                     _listView.DisplayVerbose(users);
                     break;
                 case "3":
-                    DisplaySingleMember(users);
+                    DisplaySingleMember();
                     break;
             }
         }
 
-        private void DisplaySingleMember(List<Member> users)
+        private void DisplaySingleMember()
         {
             string personalNumber = _listView.GetUserPersonalNumber();
             model.Member m = _memberOperations.GetUserInfo(personalNumber);

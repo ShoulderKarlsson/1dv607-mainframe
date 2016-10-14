@@ -50,15 +50,7 @@ namespace Workshop_2.model
 
         public model.Member GetUserInfo(string personalNumber)
         {
-            foreach (model.Member member in _storedMembers)
-            {
-                if (member.PersonalNumber == personalNumber)
-                {
-                    return member;
-                }
-            }
-
-            return null;
+            return _storedMembers.FirstOrDefault(member => member.PersonalNumber == personalNumber);
         }
 
         public void RemoveUser(string personalNumber)
@@ -101,10 +93,7 @@ namespace Workshop_2.model
             return found;
         }
 
-        private int GenerateBoatID(model.Member m)
-        {
-            return m.MemberBoats.Count == 0 ? 1 : m.MemberBoats.OrderBy(b => b.ID).Last().ID + 1;
-        }
+        private int GenerateBoatID(model.Member m) => m.MemberBoats.Count == 0 ? 1 : m.MemberBoats.OrderBy(b => b.ID).Last().ID + 1;
 
         public void SaveBoat(Boat newBoat, string personalNumber)
         {
@@ -140,7 +129,7 @@ namespace Workshop_2.model
             UpdateUser(m);
         }
 
-        public void EditBoatLength(Member m, int ID, int length)
+        public void EditBoatLength(Member m, int ID, string length)
         {
             for (int i = 0; i < m.MemberBoats.Count; i++)
             {
