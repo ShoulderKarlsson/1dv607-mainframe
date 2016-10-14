@@ -8,6 +8,7 @@ namespace Workshop_2.controller
     {
 
         private readonly ListView _listView;
+        private Member _member;
 
         public ListController()
         {
@@ -39,8 +40,8 @@ namespace Workshop_2.controller
         private void DisplaySingleMember()
         {
             string personalNumber = _listView.GetUserPersonalNumber();
-            Member m = _memberOperations.GetUserInfo(personalNumber);
-            _listView.DisplaySingleMember(m);
+            _member = _memberOperations.GetUserInfo(personalNumber);
+            _listView.DisplaySingleMember(_member);
         }
     }
 }
