@@ -1,3 +1,8 @@
 [
-
+  {
+    "Name": "Prez",
+    "PersonalNumber": "555",
+    "Id": 1,
+    "MemberBoats": []
+  }
 ]

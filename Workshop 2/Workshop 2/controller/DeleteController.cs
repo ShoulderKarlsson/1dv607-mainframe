@@ -1,10 +1,12 @@
-﻿using Workshop_2.view;
+﻿using Workshop_2.model;
+using Workshop_2.view;
 
 namespace Workshop_2.controller
 {
     class DeleteController : BaseController
     {
         private readonly DeleteView _dView;
+        private Member _member;
 
         public DeleteController()
         {
@@ -21,10 +23,10 @@ namespace Workshop_2.controller
         public void DeleteBoat()
         {
             string personalNumber = GetPersonalNumber();
-            model.Member m = _memberOperations.GetUserInfo(personalNumber);
-            _dView.PresentBoats(m);
+            _member = _memberOperations.GetUserInfo(personalNumber);
+            _dView.PresentBoats(_member);
             int ID = _dView.GetBoatID();
-            _memberOperations.RemoveBoat(m, ID);
+            _memberOperations.RemoveBoat(_member, ID);
         }
 
         private string GetPersonalNumber() => _dView.GetUserPersonalNumber();
